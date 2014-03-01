@@ -1,5 +1,5 @@
 //
-//  BINViewController.h
+//  BINMylistController.h
 //  MyGK
 //
 //  Created by bin on 14-2-23.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BINViewController : UIViewController
+@interface BINMylistController : UITableViewController
+
+@property (strong,nonatomic) NSArray *datalist;
 
 @end
