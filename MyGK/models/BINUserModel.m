@@ -14,6 +14,7 @@ static BINUserModel *_sharedUserData= nil;   //第一步：静态实例，并初
 @synthesize level;
 @synthesize name;
 @synthesize favList;
+@synthesize icon;
 
 + (BINUserModel*) sharedUserData  //第二步：实例构造检查静态实例是否为nil
 {
@@ -51,6 +52,7 @@ static BINUserModel *_sharedUserData= nil;   //第一步：静态实例，并初
         if (self != nil)
         {
             loginState = NO;
+            icon = [UIImage imageNamed:@"profile-image-placeholder"];
         }
         return self;
     }

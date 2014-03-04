@@ -49,7 +49,6 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
     
     filteredList = [NSMutableArray array];
     
-//    [[BINGKlistModel GKlist] setServerAddress:@"http://127.0.0.1:8000/GKlist/"];
     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(doneWithView:) name:@"reload" object:nil];
     [self addHeader];
     [self addFooter];
@@ -187,9 +186,11 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    selectedRow = indexPath.row;
-    NSLog(@"%d",selectedRow);
+    int row = indexPath.row;
+    if(tableView.tag == 1)
+        [BINGKlistModel GKlist].isSearch = NO;
+    else
+        [BINGKlistModel GKlist].isSearch = YES;
 
     [BINGKlistModel GKlist].selectedRow = indexPath.row;
     [self performSegueWithIdentifier:@"detailView" sender:self];

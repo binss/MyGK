@@ -23,9 +23,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionField;
 
-
+@property (strong, nonatomic) UIAlertView *uploadingAleatView;
 
 @property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) UIImage *showImage;
+
 @property (copy, nonatomic) NSString *chosenMediaType;
 
 

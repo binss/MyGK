@@ -17,4 +17,5 @@
 @property (strong,nonatomic) NSString *description;
 
 - (void)uploadPic;
+- (void)uploadIcon;
 @end

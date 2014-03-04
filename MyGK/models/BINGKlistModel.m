@@ -24,6 +24,7 @@ static BINGKlistModel *_GKlist= nil;
 @synthesize searchList;
 @synthesize loadedSearchRows;
 @synthesize totalSearchRows;
+@synthesize isSearch;
 
 + (BINGKlistModel*) GKlist
 {
@@ -65,6 +66,7 @@ static BINGKlistModel *_GKlist= nil;
             loadedRows = 0;
             loadedSearchRows = 0;
             totalSearchRows = 0;
+            isSearch = NO;
             searchList = [[NSMutableArray alloc] initWithCapacity:24];
             list = [[NSMutableArray alloc] initWithCapacity:24];
             
@@ -76,7 +78,7 @@ static BINGKlistModel *_GKlist= nil;
 
 - (void)getDataFromServer
 {
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"client",@"client",@"0",@"row",nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"list",@"list",@"0",@"row",nil];
     [manager GET:gklistServerAddress parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
@@ -168,7 +170,14 @@ static BINGKlistModel *_GKlist= nil;
 {
 //    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSString *row = [NSString stringWithFormat:@"%i",selectedRow];
+    NSDictionary *record;
+
+    if(isSearch)
+        record = [BINGKlistModel GKlist].searchList[selectedRow];
+    else
+        record = [BINGKlistModel GKlist].list[selectedRow];
+    
+    NSString *row = [NSString stringWithFormat:@"%@",[record objectForKey:@"id"]];
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"detail",@"detail",row,@"row",nil];
     [manager GET:gklistServerAddress parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject)
@@ -184,7 +193,12 @@ static BINGKlistModel *_GKlist= nil;
 
 - (void)generalData
 {
-    NSDictionary *record = [BINGKlistModel GKlist].list[selectedRow];
+    NSDictionary *record;
+    if(isSearch)
+        record = [BINGKlistModel GKlist].searchList[selectedRow];
+    else
+        record = [BINGKlistModel GKlist].list[selectedRow];
+
     selectedName = [record objectForKey:@"name"];
     selectedPrice = [record objectForKey:@"price"];
     selectedDiscount = [record objectForKey:@"discount"];

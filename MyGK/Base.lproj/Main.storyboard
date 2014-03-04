@@ -21,7 +21,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdU-If-8Rg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-515" y="276"/>
+            <point key="canvasLocation" x="-570" y="282"/>
         </scene>
         <!--Navigation Controller - 手办列表-->
         <scene sceneID="iAJ-5n-gDL">
@@ -37,7 +37,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYj-o4-lc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3" y="-507"/>
+            <point key="canvasLocation" x="-19" y="-1187"/>
         </scene>
         <!--Klist View Controller - 所有手办-->
         <scene sceneID="i8n-Mf-ObX">
@@ -88,7 +88,88 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="466" y="-515"/>
+            <point key="canvasLocation" x="460" y="-1187"/>
+        </scene>
+        <!--Icon Setting View Controller - 设定头像-->
+        <scene sceneID="q77-Cf-7eE">
+            <objects>
+                <viewController id="wyO-C3-rlw" customClass="BINIconSettingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1TG-lP-TwG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-image-placeholder.png" id="pef-R2-S8h">
+                                <rect key="frame" x="106" y="92" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5rn-bb-w7E">
+                                <rect key="frame" x="40" y="203" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="拍照">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shootPicture:" destination="wyO-C3-rlw" eventType="touchUpInside" id="7aO-6a-avV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EdA-gd-zwh">
+                                <rect key="frame" x="18" y="241" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="从相册选择">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectExistingPicture:" destination="wyO-C3-rlw" eventType="touchUpInside" id="6hC-gm-NQL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rCQ-7z-8J1">
+                                <rect key="frame" x="253" y="430" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="上传">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadButtonPressed:" destination="wyO-C3-rlw" eventType="touchUpInside" id="oSP-hk-sfy"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="说明：头像将被压缩为200*200的大小上传。为了减轻服务器存储负担，新头像上传后将覆盖旧头像。如果需要保留旧头像，请在上传之前点击“保存头像到相册”来备份。" selectable="NO" id="Lb1-Nz-KPz">
+                                <rect key="frame" x="21" y="300" width="279" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前头像：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="edU-js-z6u">
+                                <rect key="frame" x="13" y="136" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RLw-Fi-wX1">
+                                <rect key="frame" x="20" y="430" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="保存头像到相册">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="wyO-C3-rlw" eventType="touchUpInside" id="zxV-RS-ZLU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="设定头像" id="7vZ-po-ozk"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="pef-R2-S8h" id="O4L-wc-zM1"/>
+                        <outlet property="saveButton" destination="RLw-Fi-wX1" id="irE-7G-Eax"/>
+                        <outlet property="uploadButton" destination="rCQ-7z-8J1" id="idz-vL-d0b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pga-WX-4b4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="148" y="-438"/>
         </scene>
         <!--View Controller - 详细状况-->
         <scene sceneID="BRD-QG-HRm">
@@ -124,12 +205,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpe-T6-zLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="910" y="-507"/>
+            <point key="canvasLocation" x="1008" y="-1187"/>
         </scene>
         <!--Mylist Controller - Title-->
         <scene sceneID="tX2-6N-a8h">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ORF-Jd-jhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="QhT-Th-zpb" customClass="BINMylistController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RU8-Rh-IKz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -140,8 +220,9 @@
                         <barButtonItem key="leftBarButtonItem" title="返回" id="a30-sK-ydF"/>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ORF-Jd-jhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262" y="1503"/>
+            <point key="canvasLocation" x="98" y="2267"/>
         </scene>
         <!--Navigation Controller - 我的手办-->
         <scene sceneID="7Oi-Rh-bAe">
@@ -168,13 +249,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未登录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z7w-gQ-fp1">
-                                <rect key="frame" x="20" y="87" width="188" height="43"/>
+                                <rect key="frame" x="84" y="86" width="173" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qUl-fW-Mc1">
-                                <rect key="frame" x="224" y="100" width="30" height="30"/>
+                                <rect key="frame" x="265" y="111" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="登录">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -184,7 +265,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VCh-Su-c21">
-                                <rect key="frame" x="270" y="100" width="30" height="30"/>
+                                <rect key="frame" x="265" y="86" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="注册">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,7 +275,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qjv-7A-4KF">
-                                <rect key="frame" x="270" y="100" width="30" height="30"/>
+                                <rect key="frame" x="265" y="111" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="注销">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -204,13 +285,13 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lv0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wzZ-Nc-MKw">
-                                <rect key="frame" x="216" y="104" width="46" height="21"/>
+                                <rect key="frame" x="84" y="115" width="46" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kYq-0l-Oi2">
-                                <rect key="frame" x="31" y="138" width="51" height="30"/>
+                                <rect key="frame" x="32" y="225" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="UPload">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -220,7 +301,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="GlZ-8u-l3s">
-                                <rect key="frame" x="103" y="125" width="170" height="170"/>
+                                <rect key="frame" x="130" y="245" width="170" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uAm-Nt-Spz">
@@ -233,11 +314,22 @@
                                     <segue destination="qfh-9u-qOO" kind="push" identifier="upload" id="WwO-RK-rRO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vir-kD-G6P">
+                                <rect key="frame" x="20" y="86" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="profile-image-placeholder.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wyO-C3-rlw" kind="push" id="dMh-N1-NoV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="我的手办" id="Cvt-eE-vfX"/>
                     <connections>
+                        <outlet property="IconButton" destination="vir-kD-G6P" id="9H0-Gx-1ku"/>
                         <outlet property="levelLabel" destination="wzZ-Nc-MKw" id="QZH-fm-QK6"/>
                         <outlet property="loginButton" destination="qUl-fW-Mc1" id="HFx-H0-irl"/>
                         <outlet property="nameLabel" destination="z7w-gQ-fp1" id="ovz-2v-zTj"/>
@@ -396,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIT-a3-fnr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="500" y="874"/>
+            <point key="canvasLocation" x="726" y="1348"/>
         </scene>
         <!--Signup View Controller - 注册-->
         <scene sceneID="z4g-W7-JQU">
@@ -558,7 +650,6 @@
         <!--Navigation Controller -  我关注的手办-->
         <scene sceneID="an9-o7-uk6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lEh-p9-kRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="Sct-bl-6tV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title=" 我关注的手办" id="WzH-Bn-OHc"/>
                     <navigationItem key="navigationItem" id="wQg-Ed-cBs"/>
@@ -569,8 +660,9 @@
                         <segue destination="QhT-Th-zpb" kind="relationship" relationship="rootViewController" id="igu-ng-RDN"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lEh-p9-kRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-202" y="1509"/>
+            <point key="canvasLocation" x="-534" y="2267"/>
         </scene>
         <!--Login View Controller - 登录-->
         <scene sceneID="d6e-Ap-CQx">
@@ -735,7 +827,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vw5-s4-9Q4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461" y="-827"/>
+            <point key="canvasLocation" x="1537" y="-1347"/>
         </scene>
     </scenes>
     <resources>

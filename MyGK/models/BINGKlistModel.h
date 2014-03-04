@@ -13,6 +13,7 @@
 @property (strong,nonatomic) NSMutableArray *list;
 @property int loadedRows;
 @property int selectedRow;
+@property BOOL isSearch;
 @property (strong,nonatomic) NSString *selectedDescription;
 @property (strong,nonatomic) NSString *selectedName;
 @property (strong,nonatomic) NSString *selectedPrice;

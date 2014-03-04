@@ -55,7 +55,9 @@
     if ([[BINUserModel sharedUserData] loginState])
     {
 //        NSLog(@"login successful");
-
+        
+        self.IconButton.enabled = YES;
+        [self.IconButton setImage:[[BINUserModel sharedUserData] icon] forState:UIControlStateNormal];
         self.loginButton.hidden = YES;
         self.signupButton.hidden = YES;
         self.signoutButton.hidden = NO;
@@ -66,6 +68,9 @@
 }
 - (IBAction)signoutButtonPressed:(UIButton *)sender
 {
+    [[BINUserModel sharedUserData] setLoginState:NO];
+    
+    self.IconButton.enabled = NO;
     self.loginButton.hidden = NO;
     self.signupButton.hidden = NO;
     self.signoutButton.hidden = YES;
@@ -73,18 +78,21 @@
     self.nameLabel.text = @"未登录";
 }
 
+
+
 - (IBAction)uploadPIC:(id)sender
 {
-    NSURL *url = [NSURL URLWithString:@"http://127.0.0.1:8000/pic/UserUploadPic/kankore-bath-shimakaze.png/"];
-    [self.picccccc setImageWithURL:url placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
-
-//    [self upLoadPic];
+//    NSURL *url = [NSURL URLWithString:@"http://127.0.0.1:8000/pic/UserUploadPic/kankore-bath-shimakaze.png/"];
+//    [self.picccccc setImageWithURL:url placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
+    
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     //隐藏toolbar
     [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+//    self.navigationItem.backBarButtonItem= [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:nil];
 }
 
 - (void)upLoadPic

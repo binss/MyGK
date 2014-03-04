@@ -14,5 +14,6 @@
 @property NSString *name;
 @property int level;
 @property (copy,nonatomic) NSArray *favList;
+@property (strong,nonatomic) UIImage *icon;
 + (BINUserModel*) sharedUserData;
 @end

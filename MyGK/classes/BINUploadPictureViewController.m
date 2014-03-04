@@ -16,13 +16,18 @@
 
 @implementation BINUploadPictureViewController
 @synthesize chosenMediaType;
+@synthesize uploadingAleatView;
+@synthesize showImage;
+@synthesize image;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
     }
+
     return self;
 }
 
@@ -30,17 +35,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-//    [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(doneWithView:) name:@"reload" object:nil];
-    NSLog(@"caaaaa");
+    [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(uploadDone:) name:@"uploadDone" object:nil];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    
     [super viewDidAppear:animated];
+    
     self.upLoadButton.enabled = NO;
     if ([self.chosenMediaType isEqual:(NSString *)kUTTypeImage])
     {
-        self.imageView.image = self.image;
+        self.imageView.image = showImage;
         self.upLoadButton.enabled = YES;
     }
     else if([chosenMediaType isEqual:(NSString *)kUTTypeMovie])
@@ -61,6 +68,38 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)uploadDone:(NSNotification *) notification
+{
+    //移除“正在上传”对话框
+    [uploadingAleatView dismissWithClickedButtonIndex:0 animated:YES];
+
+    NSString *type = [notification object];
+    UIAlertView *alert;
+    if([type isEqualToString:@"success"])
+    {
+        alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                        message:@"上传成功"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    }
+    else
+    {
+        alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                        message:@"上传失败"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    }
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex //ALertView即将消失时的事件
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 - (IBAction)shootPicture:(UIButton *)sender
 {
     //加载来自相机的文件
@@ -73,6 +112,49 @@
     //加载来自媒体库的文件
     [self pickMediaFromSource:UIImagePickerControllerSourceTypePhotoLibrary];
 
+}
+
+- (IBAction)resetButtonPressed:(UIButton *)sender
+{
+    self.nameField.text = @"";
+    self.priceField.text = @"";
+    self.addressField.text = @"";
+    self.descriptionField.text = @"";
+    self.imageView.image = [UIImage imageNamed:@"profile-image-placeholder"];
+}
+
+- (IBAction)uploadButtonPressed:(UIButton *)sender
+{
+    if(self.nameField.text.length && self.priceField.text.length && self.addressField.text.length)
+    {
+        uploadingAleatView= [[UIAlertView alloc]initWithTitle:@"正在上传中，请等待"
+                                                       message:nil
+                                                      delegate:nil
+                                             cancelButtonTitle:nil
+                                             otherButtonTitles:nil];
+        [uploadingAleatView show];
+        
+        
+        BINUploadModel * upload = [[BINUploadModel alloc] init];
+        upload.upLoadUser = @"bin";
+        upload.name = self.nameField.text;
+        upload.price = self.priceField.text;
+        upload.address = self.addressField.text;
+        upload.description = @"无";
+        upload.upLoadImage = image;
+        [upload uploadPic];
+        
+
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误"
+                                                        message:@"请完善信息"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (void)pickMediaFromSource:(UIImagePickerControllerSourceType)sourceType
@@ -120,13 +202,13 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     if ([chosenMediaType isEqual:(NSString *)kUTTypeImage])
     {
         UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-//        UIImage *shrunkenImage = [self shrinkImage:chosenImage
-//                                            toSize:self.imageView.bounds.size];
-        self.image = chosenImage;
+        UIImage *shrunkenImage = [self shrinkImage:chosenImage
+                                            toSize:self.imageView.bounds.size];
+        image = chosenImage;
+        showImage = shrunkenImage;
     }
     else if ([chosenMediaType isEqual:(NSString *)kUTTypeMovie])
     {
-//        self.movieURL = info[UIImagePickerControllerMediaURL];
         NSLog(@"我是视频");
     }
     [picker dismissViewControllerAnimated:YES completion:NULL];
@@ -136,35 +218,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
-- (IBAction)resetButtonPressed:(UIButton *)sender
-{
-    
-}
 
-- (IBAction)uploadButtonPressed:(UIButton *)sender
-{
-    if(self.nameField.text.length && self.priceField.text.length && self.addressField.text.length)
-    {
-        BINUploadModel * upload = [[BINUploadModel alloc] init];
-        upload.upLoadUser = @"bin";
-        upload.name = self.nameField.text;
-        upload.price = self.priceField.text;
-        upload.address = self.addressField.text;
-        upload.description = @"无";
-        upload.upLoadImage = self.image;
-        [upload uploadPic];
-    }
-    else
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误"
-                                                        message:@"请完善信息"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-}
 
+#pragma mark - Background View raise and resume
 - (IBAction)backgroundTap:(UIControl *)sender
 {
     [self.nameField resignFirstResponder];

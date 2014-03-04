@@ -59,6 +59,7 @@
 		34AF111518C4ACF6004E9B2B /* BINUploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AF111418C4ACF6004E9B2B /* BINUploadModel.m */; };
 		34AF111818C4CFB6004E9B2B /* ServerAddressSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AF111718C4CFB6004E9B2B /* ServerAddressSetting.m */; };
 		34D1C07818BA4BA1006B18C1 /* BINSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D1C07718BA4BA1006B18C1 /* BINSignupViewController.m */; };
+		34D8DFEF18C601810014EA2B /* BINIconSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D8DFEE18C601810014EA2B /* BINIconSettingViewController.m */; };
 		34FF821818C430D500596AD8 /* IMG_4823.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 34FF821718C430D500596AD8 /* IMG_4823.JPG */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +166,8 @@
 		34AF111718C4CFB6004E9B2B /* ServerAddressSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerAddressSetting.m; sourceTree = "<group>"; };
 		34D1C07618BA4BA1006B18C1 /* BINSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINSignupViewController.h; path = classes/BINSignupViewController.h; sourceTree = "<group>"; };
 		34D1C07718BA4BA1006B18C1 /* BINSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINSignupViewController.m; path = classes/BINSignupViewController.m; sourceTree = "<group>"; };
+		34D8DFED18C601810014EA2B /* BINIconSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINIconSettingViewController.h; path = classes/BINIconSettingViewController.h; sourceTree = "<group>"; };
+		34D8DFEE18C601810014EA2B /* BINIconSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINIconSettingViewController.m; path = classes/BINIconSettingViewController.m; sourceTree = "<group>"; };
 		34FF821718C430D500596AD8 /* IMG_4823.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IMG_4823.JPG; path = ../../../IMG_4823.JPG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -266,8 +269,6 @@
 				346E79FB18BCC28200870DCE /* BINListCell.h */,
 				346E79FC18BCC28200870DCE /* BINListCell.m */,
 				346E79FE18BCC5D100870DCE /* BINListCell.xib */,
-				346E7A0518BCFD2700870DCE /* BINGKdetailContainerViewController.h */,
-				346E7A0618BCFD2700870DCE /* BINGKdetailContainerViewController.m */,
 				347BBF5518BA019000AA302E /* BINMyGKViewController.h */,
 				347BBF5618BA019000AA302E /* BINMyGKViewController.m */,
 				347BBEF118B989EE00AA302E /* Images.xcassets */,
@@ -318,6 +319,10 @@
 				347BBF5018B9A6C100AA302E /* BINLoginViewController.m */,
 				34AF111018C49F5C004E9B2B /* BINUploadPictureViewController.h */,
 				34AF111118C49F5C004E9B2B /* BINUploadPictureViewController.m */,
+				346E7A0518BCFD2700870DCE /* BINGKdetailContainerViewController.h */,
+				346E7A0618BCFD2700870DCE /* BINGKdetailContainerViewController.m */,
+				34D8DFED18C601810014EA2B /* BINIconSettingViewController.h */,
+				34D8DFEE18C601810014EA2B /* BINIconSettingViewController.m */,
 			);
 			name = classes;
 			sourceTree = "<group>";
@@ -508,6 +513,7 @@
 				347BBF4818B9986D00AA302E /* UIAlertView+AFNetworking.m in Sources */,
 				347BBF4118B9986D00AA302E /* AFSecurityPolicy.m in Sources */,
 				347BBEEA18B989EE00AA302E /* BINAppDelegate.m in Sources */,
+				34D8DFEF18C601810014EA2B /* BINIconSettingViewController.m in Sources */,
 				347BBF5718BA019000AA302E /* BINMyGKViewController.m in Sources */,
 				347BBF3E18B9986D00AA302E /* AFHTTPRequestOperationManager.m in Sources */,
 				347BBF5118B9A6C100AA302E /* BINLoginViewController.m in Sources */,
@@ -664,6 +670,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyGK/MyGK-Prefix.pch";
 				INFOPLIST_FILE = "MyGK/MyGK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -677,6 +684,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyGK/MyGK-Prefix.pch";
 				INFOPLIST_FILE = "MyGK/MyGK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

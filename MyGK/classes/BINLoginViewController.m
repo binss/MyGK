@@ -9,6 +9,7 @@
 #import "BINLoginViewController.h"
 #import "AFNetworking.h"
 #import "BINUserModel.h"
+#import "ServerAddressSetting.h"
 
 @interface BINLoginViewController ()
 
@@ -32,8 +33,7 @@
 //    [self.tabBarController setHidesBottomBarWhenPushed:YES];
     self.loginButton.enabled = NO;
     [self.userTextField becomeFirstResponder];
-
-
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,10 +60,12 @@
                 [[BINUserModel sharedUserData] setLoginState:YES];
                 [[BINUserModel sharedUserData] setName:[responseObject objectForKey:@"name"]];
                 [[BINUserModel sharedUserData] setLevel:level.intValue];
+                [self getIcon:self.userTextField.text];
+
                 
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"登录成功" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
-                            }
+            }
             else
             {
                 self.errorLabel.text = [responseObject objectForKey:@"content"];
@@ -80,6 +82,26 @@
 //    [self performSegueWithIdentifier:@"loginSuccessful" sender:self];
 
 
+}
+
+- (void)getIcon:(NSString *)user
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSString *str = [NSString stringWithFormat:@"%@%@.png",userIconServerAddress,user];
+    NSURL *URL = [NSURL URLWithString:str];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response)
+    {
+      NSURL *documentsDirectoryPath = [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]];
+      return [documentsDirectoryPath URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error)
+    {
+      [[BINUserModel sharedUserData] setIcon:[UIImage imageWithData:[NSData dataWithContentsOfURL:filePath]]];
+    }];
+    [downloadTask resume];
 }
 
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
