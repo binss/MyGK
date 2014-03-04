@@ -55,7 +55,11 @@
 		347D202A18BF375B0013AC2F /* BINGKlistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347D202918BF375B0013AC2F /* BINGKlistModel.m */; };
 		349B26C818BF99150055DB30 /* heart_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 349B26C718BF99150055DB30 /* heart_black@2x.png */; };
 		349B26CA18BF9A360055DB30 /* heart_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 349B26C918BF9A360055DB30 /* heart_red@2x.png */; };
+		34AF111218C49F5C004E9B2B /* BINUploadPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AF111118C49F5C004E9B2B /* BINUploadPictureViewController.m */; };
+		34AF111518C4ACF6004E9B2B /* BINUploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AF111418C4ACF6004E9B2B /* BINUploadModel.m */; };
+		34AF111818C4CFB6004E9B2B /* ServerAddressSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AF111718C4CFB6004E9B2B /* ServerAddressSetting.m */; };
 		34D1C07818BA4BA1006B18C1 /* BINSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D1C07718BA4BA1006B18C1 /* BINSignupViewController.m */; };
+		34FF821818C430D500596AD8 /* IMG_4823.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 34FF821718C430D500596AD8 /* IMG_4823.JPG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,8 +157,15 @@
 		347D202918BF375B0013AC2F /* BINGKlistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINGKlistModel.m; path = models/BINGKlistModel.m; sourceTree = "<group>"; };
 		349B26C718BF99150055DB30 /* heart_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart_black@2x.png"; sourceTree = "<group>"; };
 		349B26C918BF9A360055DB30 /* heart_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart_red@2x.png"; sourceTree = "<group>"; };
+		34AF111018C49F5C004E9B2B /* BINUploadPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINUploadPictureViewController.h; path = classes/BINUploadPictureViewController.h; sourceTree = "<group>"; };
+		34AF111118C49F5C004E9B2B /* BINUploadPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINUploadPictureViewController.m; path = classes/BINUploadPictureViewController.m; sourceTree = "<group>"; };
+		34AF111318C4ACF6004E9B2B /* BINUploadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINUploadModel.h; path = models/BINUploadModel.h; sourceTree = "<group>"; };
+		34AF111418C4ACF6004E9B2B /* BINUploadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINUploadModel.m; path = models/BINUploadModel.m; sourceTree = "<group>"; };
+		34AF111618C4CFB6004E9B2B /* ServerAddressSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerAddressSetting.h; sourceTree = "<group>"; };
+		34AF111718C4CFB6004E9B2B /* ServerAddressSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerAddressSetting.m; sourceTree = "<group>"; };
 		34D1C07618BA4BA1006B18C1 /* BINSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINSignupViewController.h; path = classes/BINSignupViewController.h; sourceTree = "<group>"; };
 		34D1C07718BA4BA1006B18C1 /* BINSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINSignupViewController.m; path = classes/BINSignupViewController.m; sourceTree = "<group>"; };
+		34FF821718C430D500596AD8 /* IMG_4823.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IMG_4823.JPG; path = ../../../IMG_4823.JPG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				346E7A0018BCDC7600870DCE /* profile-image-placeholder@2x.png */,
+				34FF821718C430D500596AD8 /* IMG_4823.JPG */,
 				345DF6E418BB39EC009E0F80 /* button@2x.png */,
 				349B26C718BF99150055DB30 /* heart_black@2x.png */,
 				349B26C918BF9A360055DB30 /* heart_red@2x.png */,
@@ -242,10 +254,12 @@
 		347BBEDF18B989EE00AA302E /* MyGK */ = {
 			isa = PBXGroup;
 			children = (
-				347D202B18BF417D0013AC2F /* Models */,
-				347BBF1118B98F1000AA302E /* classes */,
 				347BBEE818B989EE00AA302E /* BINAppDelegate.h */,
 				347BBEE918B989EE00AA302E /* BINAppDelegate.m */,
+				34AF111618C4CFB6004E9B2B /* ServerAddressSetting.h */,
+				34AF111718C4CFB6004E9B2B /* ServerAddressSetting.m */,
+				347D202B18BF417D0013AC2F /* Models */,
+				347BBF1118B98F1000AA302E /* classes */,
 				347BBEEB18B989EE00AA302E /* Main.storyboard */,
 				346E79F818BCC1C500870DCE /* BINGKlistViewController.h */,
 				346E79F918BCC1C500870DCE /* BINGKlistViewController.m */,
@@ -302,6 +316,8 @@
 				34D1C07718BA4BA1006B18C1 /* BINSignupViewController.m */,
 				347BBF4F18B9A6C100AA302E /* BINLoginViewController.h */,
 				347BBF5018B9A6C100AA302E /* BINLoginViewController.m */,
+				34AF111018C49F5C004E9B2B /* BINUploadPictureViewController.h */,
+				34AF111118C49F5C004E9B2B /* BINUploadPictureViewController.m */,
 			);
 			name = classes;
 			sourceTree = "<group>";
@@ -373,6 +389,8 @@
 				347BBF5F18BA17EB00AA302E /* BINUserModel.m */,
 				347D202818BF375B0013AC2F /* BINGKlistModel.h */,
 				347D202918BF375B0013AC2F /* BINGKlistModel.m */,
+				34AF111318C4ACF6004E9B2B /* BINUploadModel.h */,
+				34AF111418C4ACF6004E9B2B /* BINUploadModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -459,6 +477,7 @@
 				347BBEE418B989EE00AA302E /* InfoPlist.strings in Resources */,
 				3479408918BE1DEC00F5B621 /* MJRefresh.bundle in Resources */,
 				347BBEED18B989EE00AA302E /* Main.storyboard in Resources */,
+				34FF821818C430D500596AD8 /* IMG_4823.JPG in Resources */,
 				345DF6E518BB39EC009E0F80 /* button@2x.png in Resources */,
 				346E7A0118BCDC7600870DCE /* profile-image-placeholder@2x.png in Resources */,
 				346E79FF18BCC5D100870DCE /* BINListCell.xib in Resources */,
@@ -501,6 +520,7 @@
 				347BBF4718B9986D00AA302E /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				347BBEE618B989EE00AA302E /* main.m in Sources */,
 				346E79FA18BCC1C500870DCE /* BINGKlistViewController.m in Sources */,
+				34AF111518C4ACF6004E9B2B /* BINUploadModel.m in Sources */,
 				347BBF4318B9986D00AA302E /* AFURLRequestSerialization.m in Sources */,
 				347BBF3F18B9986D00AA302E /* AFHTTPSessionManager.m in Sources */,
 				347BBF4018B9986D00AA302E /* AFNetworkReachabilityManager.m in Sources */,
@@ -511,6 +531,8 @@
 				346E79FD18BCC28200870DCE /* BINListCell.m in Sources */,
 				347BBF4D18B9986D00AA302E /* UIWebView+AFNetworking.m in Sources */,
 				347BBF4518B9986D00AA302E /* AFURLSessionManager.m in Sources */,
+				34AF111818C4CFB6004E9B2B /* ServerAddressSetting.m in Sources */,
+				34AF111218C49F5C004E9B2B /* BINUploadPictureViewController.m in Sources */,
 				347BBF4618B9986D00AA302E /* AFNetworkActivityIndicatorManager.m in Sources */,
 				347BBF1518B9942E00AA302E /* BINMylistController.m in Sources */,
 			);

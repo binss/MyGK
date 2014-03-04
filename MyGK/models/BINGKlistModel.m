@@ -7,21 +7,23 @@
 //
 
 #import "BINGKlistModel.h"
-#import "AFNetworking.h"
+#import "ServerAddressSetting.h"
 static BINGKlistModel *_GKlist= nil;
 
 
 @implementation BINGKlistModel
+@synthesize manager;
 @synthesize list;
 @synthesize loadedRows;
-@synthesize serverAddress;
 @synthesize selectedRow;
 @synthesize selectedDescription;
 @synthesize selectedName;
 @synthesize selectedPrice;
 @synthesize selectedDiscount;
 @synthesize selectedPicURL;
-@synthesize refresh;
+@synthesize searchList;
+@synthesize loadedSearchRows;
+@synthesize totalSearchRows;
 
 + (BINGKlistModel*) GKlist
 {
@@ -58,8 +60,12 @@ static BINGKlistModel *_GKlist= nil;
         self = [super init];//往往放一些要初始化的变量.
         if (self != nil)
         {
+            manager = [AFHTTPRequestOperationManager manager];
+            manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
             loadedRows = 0;
-            refresh = NO;
+            loadedSearchRows = 0;
+            totalSearchRows = 0;
+            searchList = [[NSMutableArray alloc] initWithCapacity:24];
             list = [[NSMutableArray alloc] initWithCapacity:24];
             
         }
@@ -70,11 +76,8 @@ static BINGKlistModel *_GKlist= nil;
 
 - (void)getDataFromServer
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"client",@"client",@"0",@"row",nil];
-    [manager GET:serverAddress parameters:parameters
+    [manager GET:gklistServerAddress parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          if(loadedRows)
@@ -94,12 +97,10 @@ static BINGKlistModel *_GKlist= nil;
 
 - (void)getMoreDataFromServer
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     NSString *row = [NSString stringWithFormat:@"%i",loadedRows];
 
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"client",@"client",row,@"row",nil];
-    [manager GET:serverAddress parameters:parameters
+    [manager GET:gklistServerAddress parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          //            NSLog(@"JSON: %@", responseObject);
@@ -114,37 +115,62 @@ static BINGKlistModel *_GKlist= nil;
 
 }
 
-- (void)getSearchResultFromServer
+- (void)getSearchResultFromServer:(NSString *)searchString
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSString *row = [NSString stringWithFormat:@"%i",loadedRows];
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"client",@"client",row,@"row",nil];
-    [manager GET:serverAddress parameters:parameters
+    [searchList removeAllObjects];
+
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"search",@"search",searchString,@"searchString",@"0",@"row",nil];
+    [manager GET:gklistServerAddress parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
-         //            NSLog(@"JSON: %@", responseObject);
-         [list addObjectsFromArray:[responseObject objectForKey:@"Data"]];
-         //         NSLog(@"%@", [[datalist objectAtIndex:0] objectForKey:@"name"]);
-         //         [self.tableView reloadData];
-         [[NSNotificationCenter defaultCenter] postNotificationName:@"reload" object:@"loadmore"];
+         NSNumber *num = [responseObject objectForKey:@"totalRow"];
+         totalSearchRows = num.intValue;
+         NSLog(@"total:%i",totalSearchRows);
+         
+         [searchList addObjectsFromArray:[responseObject objectForKey:@"result"]];
+         [[NSNotificationCenter defaultCenter] postNotificationName:@"reload" object:@"search"];
 
-         loadedRows = loadedRows + 8;
+         loadedSearchRows = 8;
      }
          failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          NSLog(@"Error: %@", error);
      }];
+}
 
+- (void)getMoreSearchResultFromServer:(NSString *)searchString
+{
+    if(totalSearchRows > loadedSearchRows)
+    {
+        NSString *row = [NSString stringWithFormat:@"%i",loadedSearchRows];
+        NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"search",@"search",searchString,@"searchString",row,@"row",nil];
+        [manager GET:gklistServerAddress parameters:parameters
+             success:^(AFHTTPRequestOperation *operation, id responseObject)
+         {
+             NSArray *array = [responseObject objectForKey:@"result"];
+             [searchList addObjectsFromArray:array];
+             
+             loadedSearchRows = loadedSearchRows + [array count];
+             
+             [[NSNotificationCenter defaultCenter] postNotificationName:@"reload" object:@"searchmore"];
+             NSLog(@"load:%d/total:%d",loadedSearchRows,totalSearchRows);
+
+         }
+             failure:^(AFHTTPRequestOperation *operation, NSError *error)
+         {
+             NSLog(@"Error: %@", error);
+         }];
+    }
+    
 }
 
 - (void)getDetailFromServer
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     NSString *row = [NSString stringWithFormat:@"%i",selectedRow];
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"detail",@"detail",row,@"row",nil];
-    [manager GET:serverAddress parameters:parameters
+    [manager GET:gklistServerAddress parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          _GKlist.selectedDescription = [responseObject objectForKey:@"description"];
@@ -154,6 +180,7 @@ static BINGKlistModel *_GKlist= nil;
          NSLog(@"Error: %@", error);
      }];
 }
+
 
 - (void)generalData
 {

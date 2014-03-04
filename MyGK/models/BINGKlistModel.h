@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFNetworking.h"
 
 @interface BINGKlistModel : NSObject
 @property (strong,nonatomic) NSMutableArray *list;
 @property int loadedRows;
-@property (strong,nonatomic) NSString *serverAddress;
 @property int selectedRow;
 @property (strong,nonatomic) NSString *selectedDescription;
 @property (strong,nonatomic) NSString *selectedName;
@@ -19,13 +19,19 @@
 @property (strong,nonatomic) NSString *selectedDiscount;
 @property (strong,nonatomic) NSString *selectedPicURL;
 
+@property int loadedSearchRows;
+@property int totalSearchRows;
+
 @property (strong,nonatomic) NSMutableArray *searchList;
-@property BOOL refresh;
+@property (strong,nonatomic) AFHTTPRequestOperationManager *manager;
+
 
 - (void)getDataFromServer;
 - (void)getDetailFromServer;
 - (void)generalData;
 - (void)getMoreDataFromServer;
 + (BINGKlistModel*) GKlist;
+- (void)getSearchResultFromServer:(NSString *)searchString;
+- (void)getMoreSearchResultFromServer:(NSString *)searchString;
 
 @end

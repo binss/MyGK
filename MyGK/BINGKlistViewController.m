@@ -14,7 +14,7 @@
 @interface BINGKlistViewController ()
 @property MJRefreshHeaderView *header;
 @property MJRefreshFooterView *footer;
-
+@property MJRefreshFooterView *searchFooter;
 @end
 
 static NSString *CellTableIdentifier = @"CellTableIdentifier";
@@ -22,13 +22,13 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
 @implementation BINGKlistViewController
 @synthesize selectedRow;
 @synthesize GKlist;
-@synthesize searchBar;
 @synthesize filteredList;
 @synthesize searchDisplayController;
 @synthesize SearchBar;
 @synthesize searchTableview;
 @synthesize header;
 @synthesize footer;
+@synthesize searchFooter;
 
 
 
@@ -49,7 +49,7 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
     
     filteredList = [NSMutableArray array];
     
-    [[BINGKlistModel GKlist] setServerAddress:@"http://127.0.0.1:8000/GKlist/"];
+//    [[BINGKlistModel GKlist] setServerAddress:@"http://127.0.0.1:8000/GKlist/"];
     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(doneWithView:) name:@"reload" object:nil];
     [self addHeader];
     [self addFooter];
@@ -100,14 +100,43 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
 
 - (void)doneWithView:(NSNotification *) notification
 {
-    NSLog(@"get");
     // 刷新表格
-    [self.tableView reloadData];
     NSString *type = [notification object];
     if([type isEqualToString:@"refresh"])
+    {
+        [self.tableView reloadData];
         [header endRefreshing];        // 调用endRefreshing结束刷新状态
+    }
     else if([type isEqualToString:@"loadmore"])
+    {
+        [self.tableView reloadData];
         [footer endRefreshing];
+    }
+    else if([type isEqualToString:@"search"])
+    {
+        [searchFooter removeFromSuperview];                 //移除遗留的searchFooter
+
+        if([BINGKlistModel GKlist].totalSearchRows >= 8)    //如果结果数大于等于8，则添加”searchFooter"
+        {
+//            searchFooter = [[MJRefreshFooterView alloc] init];
+//            searchFooter.delegate = searchDisplayController;
+            searchFooter.scrollView = searchTableview;
+        }
+        [searchTableview reloadData];
+    }
+    else if([type isEqualToString:@"searchmore"])
+    {
+        if([BINGKlistModel GKlist].totalSearchRows == [BINGKlistModel GKlist].loadedSearchRows)
+        {
+            [searchFooter removeFromSuperview];
+            NSLog(@"remove");
+        }
+
+        [searchTableview reloadData];
+        [searchFooter endRefreshing];
+
+    }
+    
 }
 
 
@@ -131,7 +160,7 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
     if(tableView.tag == 1)
         return [[BINGKlistModel GKlist].list count];
     else
-        return [filteredList count];
+        return [[BINGKlistModel GKlist].searchList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -146,7 +175,7 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
     }
     else
     {
-        record = filteredList[row];
+        record = [BINGKlistModel GKlist].searchList[row];
     }
     cell.nameLabel.text = [record objectForKey:@"name"];
     cell.priceLabel.text = [record objectForKey:@"price"];
@@ -170,34 +199,52 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView
 {
+    searchTableview = tableView;
+    searchFooter = [[MJRefreshFooterView alloc] init];
+    searchFooter.delegate = searchDisplayController;
+//    searchFooter.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView)
+//    {
+//        NSLog(@"CCC");
+//    };
+    searchFooter.scrollView = tableView;
+
     tableView.rowHeight = 75;
     UINib *nib = [UINib nibWithNibName:@"BINListCell" bundle:nil];
 
     [tableView registerNib:nib forCellReuseIdentifier:CellTableIdentifier];
-    searchTableview = tableView;
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-    NSLog(@"search");
-    [filteredList removeAllObjects];
+    searchFooter.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView)
+    {
+        [[BINGKlistModel GKlist] getMoreSearchResultFromServer:searchString];
+    };
+    [[BINGKlistModel GKlist] getSearchResultFromServer:searchString];
+    
 
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"search",@"search",searchString,@"searchString",nil];
-    [manager GET:@"http://127.0.0.1:8000/GKlist/" parameters:parameters
-         success:^(AFHTTPRequestOperation *operation, id responseObject)
-     {
-         [filteredList addObjectsFromArray:[responseObject objectForKey:@"result"]];
+    
+    //下拉的时候加载多8行
 
-         
-         [searchTableview reloadData];
-         
-     }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error)
-     {
-         NSLog(@"Error: %@", error);
-     }];
+    
+//    [filteredList removeAllObjects];
+
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+//    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"search",@"search",searchString,@"searchString",nil];
+//    [manager GET:@"http://127.0.0.1:8000/GKlist/" parameters:parameters
+//         success:^(AFHTTPRequestOperation *operation, id responseObject)
+//     {
+//         [filteredList addObjectsFromArray:[responseObject objectForKey:@"result"]];
+//
+//         
+//         [searchTableview reloadData];
+//         
+//     }
+//         failure:^(AFHTTPRequestOperation *operation, NSError *error)
+//     {
+//         NSLog(@"Error: %@", error);
+//     }];
     
 //    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *dict, NSDictionary *bindings)
 //    {

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>33C6A858-EAA2-4417-A494-31FCF0EAF5BC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MyGK</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B80A1927-CC3E-4913-9C02-A162184F251B</key>
+		<string>https://github.com/binss/MyGK.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MyGK.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B80A1927-CC3E-4913-9C02-A162184F251B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/binss/MyGK.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B80A1927-CC3E-4913-9C02-A162184F251B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B80A1927-CC3E-4913-9C02-A162184F251B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MyGK</string>
+		</dict>
+	</array>
+</dict>
+</plist>

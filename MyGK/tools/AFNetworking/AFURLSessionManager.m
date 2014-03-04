@@ -129,7 +129,6 @@ typedef void (^AFURLSessionTaskCompletionHandler)(NSURLResponse *response, id re
 
     self.uploadProgress = [[NSProgress alloc] initWithParent:nil userInfo:nil];
     self.downloadProgress = [[NSProgress alloc] initWithParent:nil userInfo:nil];
-
     return self;
 }
 

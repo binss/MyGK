@@ -16,4 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 - (IBAction)signoutButtonPressed:(UIButton *)sender;
 
+- (IBAction)uploadPIC:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *picccccc;
 @end

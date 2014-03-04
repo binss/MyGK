@@ -13,7 +13,6 @@
 @interface BINGKlistViewController : UITableViewController<UISearchDisplayDelegate>
 @property (nonatomic, strong) BINGKlistModel *GKlist;
 @property int selectedRow;
-@property UISearchBar  *  searchBar;
 //@property UISearchDisplayController *  searchDc;
 //@property (nonatomic) UITableView * tableView;
 @property NSMutableArray *filteredList;
