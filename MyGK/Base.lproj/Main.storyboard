@@ -300,14 +300,10 @@
                                     <action selector="uploadPIC:" destination="bbu-Q5-8jf" eventType="touchUpInside" id="EY0-lQ-eOq"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="GlZ-8u-l3s">
-                                <rect key="frame" x="130" y="245" width="170" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uAm-Nt-Spz">
-                                <rect key="frame" x="57" y="325" width="60" height="30"/>
+                                <rect key="frame" x="71" y="294" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="上传图片">
+                                <state key="normal" title="晒手办">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -315,13 +311,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vir-kD-G6P">
-                                <rect key="frame" x="20" y="86" width="50" height="50"/>
+                                <rect key="frame" x="16" y="81" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="profile-image-placeholder.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="wyO-C3-rlw" kind="push" id="dMh-N1-NoV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="htf-xT-I63">
+                                <rect key="frame" x="200" y="294" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="看动态">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bzv-wR-g5L" kind="push" id="A0Z-2M-Ehy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -333,7 +339,6 @@
                         <outlet property="levelLabel" destination="wzZ-Nc-MKw" id="QZH-fm-QK6"/>
                         <outlet property="loginButton" destination="qUl-fW-Mc1" id="HFx-H0-irl"/>
                         <outlet property="nameLabel" destination="z7w-gQ-fp1" id="ovz-2v-zTj"/>
-                        <outlet property="picccccc" destination="GlZ-8u-l3s" id="gFy-nM-cEH"/>
                         <outlet property="signoutButton" destination="qjv-7A-4KF" id="9T3-Aa-9TK"/>
                         <outlet property="signupButton" destination="VCh-Su-c21" id="3Ni-sn-qIo"/>
                     </connections>
@@ -488,7 +493,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIT-a3-fnr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="726" y="1348"/>
+            <point key="canvasLocation" x="302" y="1311"/>
+        </scene>
+        <!--User Dynamic View Controller - 动态-->
+        <scene sceneID="pIj-0a-wmA">
+            <objects>
+                <tableViewController id="bzv-wR-g5L" customClass="BINUserDynamicViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mNZ-ha-pQw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="bzv-wR-g5L" id="lZ4-kF-UCB"/>
+                            <outlet property="delegate" destination="bzv-wR-g5L" id="RjY-Xz-8nD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="动态" id="iD7-zK-tCo"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9I-67-o6R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="1137"/>
         </scene>
         <!--Signup View Controller - 注册-->
         <scene sceneID="z4g-W7-JQU">
@@ -782,7 +807,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ltS-HD-Szv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1590" y="282"/>
+            <point key="canvasLocation" x="1762" y="154"/>
         </scene>
         <!--Kdetail Container View Controller-->
         <scene sceneID="pGX-UT-1Xf">
@@ -840,6 +865,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Xha-e6-Ssb"/>
+        <segue reference="9Ts-ci-8B1"/>
     </inferredMetricsTieBreakers>
 </document>

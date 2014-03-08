@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34323C4B18CAC2780080BBA2 /* BINZoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34323C4A18CAC2780080BBA2 /* BINZoomScrollView.m */; };
+		34323C4E18CAC5B00080BBA2 /* BINZoomImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34323C4D18CAC5B00080BBA2 /* BINZoomImageView.m */; };
 		345DF6E518BB39EC009E0F80 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 345DF6E418BB39EC009E0F80 /* button@2x.png */; };
 		346E79FA18BCC1C500870DCE /* BINGKlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346E79F918BCC1C500870DCE /* BINGKlistViewController.m */; };
 		346E79FD18BCC28200870DCE /* BINListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 346E79FC18BCC28200870DCE /* BINListCell.m */; };
@@ -58,8 +60,16 @@
 		34AF111218C49F5C004E9B2B /* BINUploadPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AF111118C49F5C004E9B2B /* BINUploadPictureViewController.m */; };
 		34AF111518C4ACF6004E9B2B /* BINUploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AF111418C4ACF6004E9B2B /* BINUploadModel.m */; };
 		34AF111818C4CFB6004E9B2B /* ServerAddressSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AF111718C4CFB6004E9B2B /* ServerAddressSetting.m */; };
+		34C3E77118C753A0001EFBC4 /* BINDynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3E77018C753A0001EFBC4 /* BINDynamicCell.m */; };
+		34C3E77418C753D2001EFBC4 /* BINDynamicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C3E77318C753D2001EFBC4 /* BINDynamicCell.xib */; };
+		34C3E77A18C75E92001EFBC4 /* BINDynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3E77918C75E92001EFBC4 /* BINDynamicModel.m */; };
+		34C3E77E18C766F8001EFBC4 /* BINUserDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3E77D18C766F8001EFBC4 /* BINUserDynamicViewController.m */; };
 		34D1C07818BA4BA1006B18C1 /* BINSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D1C07718BA4BA1006B18C1 /* BINSignupViewController.m */; };
 		34D8DFEF18C601810014EA2B /* BINIconSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D8DFEE18C601810014EA2B /* BINIconSettingViewController.m */; };
+		34F577CE18C9D06900CDE5AE /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F577CD18C9D06900CDE5AE /* close.png */; };
+		34F577DA18C9EC9800CDE5AE /* BINImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F577D818C9EC9800CDE5AE /* BINImageViewController.m */; };
+		34F577DB18C9EC9800CDE5AE /* BINImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F577D918C9EC9800CDE5AE /* BINImageViewController.xib */; };
+		34F577E018CA102100CDE5AE /* IMG_4823.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F577DF18CA102100CDE5AE /* IMG_4823.png */; };
 		34FF821818C430D500596AD8 /* IMG_4823.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 34FF821718C430D500596AD8 /* IMG_4823.JPG */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +84,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34323C4918CAC2780080BBA2 /* BINZoomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINZoomScrollView.h; sourceTree = "<group>"; };
+		34323C4A18CAC2780080BBA2 /* BINZoomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINZoomScrollView.m; sourceTree = "<group>"; };
+		34323C4C18CAC5B00080BBA2 /* BINZoomImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINZoomImageView.h; sourceTree = "<group>"; };
+		34323C4D18CAC5B00080BBA2 /* BINZoomImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINZoomImageView.m; sourceTree = "<group>"; };
 		345DF6E418BB39EC009E0F80 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
 		346E79F818BCC1C500870DCE /* BINGKlistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINGKlistViewController.h; sourceTree = "<group>"; };
 		346E79F918BCC1C500870DCE /* BINGKlistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINGKlistViewController.m; sourceTree = "<group>"; };
@@ -164,10 +178,22 @@
 		34AF111418C4ACF6004E9B2B /* BINUploadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINUploadModel.m; path = models/BINUploadModel.m; sourceTree = "<group>"; };
 		34AF111618C4CFB6004E9B2B /* ServerAddressSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerAddressSetting.h; sourceTree = "<group>"; };
 		34AF111718C4CFB6004E9B2B /* ServerAddressSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerAddressSetting.m; sourceTree = "<group>"; };
+		34C3E76F18C753A0001EFBC4 /* BINDynamicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINDynamicCell.h; sourceTree = "<group>"; };
+		34C3E77018C753A0001EFBC4 /* BINDynamicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINDynamicCell.m; sourceTree = "<group>"; };
+		34C3E77318C753D2001EFBC4 /* BINDynamicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BINDynamicCell.xib; sourceTree = "<group>"; };
+		34C3E77818C75E92001EFBC4 /* BINDynamicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINDynamicModel.h; path = models/BINDynamicModel.h; sourceTree = "<group>"; };
+		34C3E77918C75E92001EFBC4 /* BINDynamicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINDynamicModel.m; path = models/BINDynamicModel.m; sourceTree = "<group>"; };
+		34C3E77C18C766F8001EFBC4 /* BINUserDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINUserDynamicViewController.h; path = classes/BINUserDynamicViewController.h; sourceTree = "<group>"; };
+		34C3E77D18C766F8001EFBC4 /* BINUserDynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINUserDynamicViewController.m; path = classes/BINUserDynamicViewController.m; sourceTree = "<group>"; };
 		34D1C07618BA4BA1006B18C1 /* BINSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINSignupViewController.h; path = classes/BINSignupViewController.h; sourceTree = "<group>"; };
 		34D1C07718BA4BA1006B18C1 /* BINSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINSignupViewController.m; path = classes/BINSignupViewController.m; sourceTree = "<group>"; };
 		34D8DFED18C601810014EA2B /* BINIconSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINIconSettingViewController.h; path = classes/BINIconSettingViewController.h; sourceTree = "<group>"; };
 		34D8DFEE18C601810014EA2B /* BINIconSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINIconSettingViewController.m; path = classes/BINIconSettingViewController.m; sourceTree = "<group>"; };
+		34F577CD18C9D06900CDE5AE /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = ../../../close.png; sourceTree = "<group>"; };
+		34F577D718C9EC9800CDE5AE /* BINImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINImageViewController.h; path = classes/BINImageViewController.h; sourceTree = "<group>"; };
+		34F577D818C9EC9800CDE5AE /* BINImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINImageViewController.m; path = classes/BINImageViewController.m; sourceTree = "<group>"; };
+		34F577D918C9EC9800CDE5AE /* BINImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BINImageViewController.xib; path = classes/BINImageViewController.xib; sourceTree = "<group>"; };
+		34F577DF18CA102100CDE5AE /* IMG_4823.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_4823.png; path = ../../../IMG_4823.png; sourceTree = "<group>"; };
 		34FF821718C430D500596AD8 /* IMG_4823.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IMG_4823.JPG; path = ../../../IMG_4823.JPG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,8 +224,10 @@
 		345DF6E318BB39EC009E0F80 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				34F577CD18C9D06900CDE5AE /* close.png */,
 				346E7A0018BCDC7600870DCE /* profile-image-placeholder@2x.png */,
 				34FF821718C430D500596AD8 /* IMG_4823.JPG */,
+				34F577DF18CA102100CDE5AE /* IMG_4823.png */,
 				345DF6E418BB39EC009E0F80 /* button@2x.png */,
 				349B26C718BF99150055DB30 /* heart_black@2x.png */,
 				349B26C918BF9A360055DB30 /* heart_red@2x.png */,
@@ -261,20 +289,21 @@
 				347BBEE918B989EE00AA302E /* BINAppDelegate.m */,
 				34AF111618C4CFB6004E9B2B /* ServerAddressSetting.h */,
 				34AF111718C4CFB6004E9B2B /* ServerAddressSetting.m */,
+				34C3E77218C753A8001EFBC4 /* tabelViewCells */,
 				347D202B18BF417D0013AC2F /* Models */,
 				347BBF1118B98F1000AA302E /* classes */,
 				347BBEEB18B989EE00AA302E /* Main.storyboard */,
 				346E79F818BCC1C500870DCE /* BINGKlistViewController.h */,
 				346E79F918BCC1C500870DCE /* BINGKlistViewController.m */,
-				346E79FB18BCC28200870DCE /* BINListCell.h */,
-				346E79FC18BCC28200870DCE /* BINListCell.m */,
-				346E79FE18BCC5D100870DCE /* BINListCell.xib */,
 				347BBF5518BA019000AA302E /* BINMyGKViewController.h */,
 				347BBF5618BA019000AA302E /* BINMyGKViewController.m */,
 				347BBEF118B989EE00AA302E /* Images.xcassets */,
 				345DF6E318BB39EC009E0F80 /* resources */,
 				347BBF1618B9986D00AA302E /* tools */,
 				347BBEE018B989EE00AA302E /* Supporting Files */,
+				34F577D718C9EC9800CDE5AE /* BINImageViewController.h */,
+				34F577D818C9EC9800CDE5AE /* BINImageViewController.m */,
+				34F577D918C9EC9800CDE5AE /* BINImageViewController.xib */,
 			);
 			path = MyGK;
 			sourceTree = "<group>";
@@ -323,6 +352,8 @@
 				346E7A0618BCFD2700870DCE /* BINGKdetailContainerViewController.m */,
 				34D8DFED18C601810014EA2B /* BINIconSettingViewController.h */,
 				34D8DFEE18C601810014EA2B /* BINIconSettingViewController.m */,
+				34C3E77C18C766F8001EFBC4 /* BINUserDynamicViewController.h */,
+				34C3E77D18C766F8001EFBC4 /* BINUserDynamicViewController.m */,
 			);
 			name = classes;
 			sourceTree = "<group>";
@@ -330,6 +361,10 @@
 		347BBF1618B9986D00AA302E /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				34323C4918CAC2780080BBA2 /* BINZoomScrollView.h */,
+				34323C4A18CAC2780080BBA2 /* BINZoomScrollView.m */,
+				34323C4C18CAC5B00080BBA2 /* BINZoomImageView.h */,
+				34323C4D18CAC5B00080BBA2 /* BINZoomImageView.m */,
 				3479407E18BE1DEC00F5B621 /* MJRefresh */,
 				347BBF1718B9986D00AA302E /* AFNetworking */,
 				347BBF2B18B9986D00AA302E /* UIKit+AFNetworking */,
@@ -396,8 +431,23 @@
 				347D202918BF375B0013AC2F /* BINGKlistModel.m */,
 				34AF111318C4ACF6004E9B2B /* BINUploadModel.h */,
 				34AF111418C4ACF6004E9B2B /* BINUploadModel.m */,
+				34C3E77818C75E92001EFBC4 /* BINDynamicModel.h */,
+				34C3E77918C75E92001EFBC4 /* BINDynamicModel.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		34C3E77218C753A8001EFBC4 /* tabelViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				346E79FB18BCC28200870DCE /* BINListCell.h */,
+				346E79FC18BCC28200870DCE /* BINListCell.m */,
+				346E79FE18BCC5D100870DCE /* BINListCell.xib */,
+				34C3E76F18C753A0001EFBC4 /* BINDynamicCell.h */,
+				34C3E77018C753A0001EFBC4 /* BINDynamicCell.m */,
+				34C3E77318C753D2001EFBC4 /* BINDynamicCell.xib */,
+			);
+			name = tabelViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,13 +529,17 @@
 			files = (
 				347BBEF218B989EE00AA302E /* Images.xcassets in Resources */,
 				349B26CA18BF9A360055DB30 /* heart_red@2x.png in Resources */,
+				34F577E018CA102100CDE5AE /* IMG_4823.png in Resources */,
 				347BBEE418B989EE00AA302E /* InfoPlist.strings in Resources */,
+				34C3E77418C753D2001EFBC4 /* BINDynamicCell.xib in Resources */,
 				3479408918BE1DEC00F5B621 /* MJRefresh.bundle in Resources */,
 				347BBEED18B989EE00AA302E /* Main.storyboard in Resources */,
+				34F577CE18C9D06900CDE5AE /* close.png in Resources */,
 				34FF821818C430D500596AD8 /* IMG_4823.JPG in Resources */,
 				345DF6E518BB39EC009E0F80 /* button@2x.png in Resources */,
 				346E7A0118BCDC7600870DCE /* profile-image-placeholder@2x.png in Resources */,
 				346E79FF18BCC5D100870DCE /* BINListCell.xib in Resources */,
+				34F577DB18C9EC9800CDE5AE /* BINImageViewController.xib in Resources */,
 				349B26C818BF99150055DB30 /* heart_black@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,8 +564,12 @@
 				347BBF4918B9986D00AA302E /* UIButton+AFNetworking.m in Sources */,
 				347BBF4C18B9986D00AA302E /* UIRefreshControl+AFNetworking.m in Sources */,
 				346E7A0718BCFD2700870DCE /* BINGKdetailContainerViewController.m in Sources */,
+				34C3E77E18C766F8001EFBC4 /* BINUserDynamicViewController.m in Sources */,
+				34F577DA18C9EC9800CDE5AE /* BINImageViewController.m in Sources */,
 				347BBF4818B9986D00AA302E /* UIAlertView+AFNetworking.m in Sources */,
 				347BBF4118B9986D00AA302E /* AFSecurityPolicy.m in Sources */,
+				34323C4E18CAC5B00080BBA2 /* BINZoomImageView.m in Sources */,
+				34C3E77A18C75E92001EFBC4 /* BINDynamicModel.m in Sources */,
 				347BBEEA18B989EE00AA302E /* BINAppDelegate.m in Sources */,
 				34D8DFEF18C601810014EA2B /* BINIconSettingViewController.m in Sources */,
 				347BBF5718BA019000AA302E /* BINMyGKViewController.m in Sources */,
@@ -531,6 +589,7 @@
 				347BBF3F18B9986D00AA302E /* AFHTTPSessionManager.m in Sources */,
 				347BBF4018B9986D00AA302E /* AFNetworkReachabilityManager.m in Sources */,
 				347BBF6018BA17EB00AA302E /* BINUserModel.m in Sources */,
+				34C3E77118C753A0001EFBC4 /* BINDynamicCell.m in Sources */,
 				3479408A18BE1DEC00F5B621 /* MJRefreshBaseView.m in Sources */,
 				347BBF4418B9986D00AA302E /* AFURLResponseSerialization.m in Sources */,
 				3479408D18BE1DEC00F5B621 /* MJRefreshHeaderView.m in Sources */,
@@ -540,6 +599,7 @@
 				34AF111818C4CFB6004E9B2B /* ServerAddressSetting.m in Sources */,
 				34AF111218C49F5C004E9B2B /* BINUploadPictureViewController.m in Sources */,
 				347BBF4618B9986D00AA302E /* AFNetworkActivityIndicatorManager.m in Sources */,
+				34323C4B18CAC2780080BBA2 /* BINZoomScrollView.m in Sources */,
 				347BBF1518B9942E00AA302E /* BINMylistController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -101,7 +101,7 @@ static BINGKlistModel *_GKlist= nil;
 {
     NSString *row = [NSString stringWithFormat:@"%i",loadedRows];
 
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"client",@"client",row,@"row",nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"list",@"list",row,@"row",nil];
     [manager GET:gklistServerAddress parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject)
      {

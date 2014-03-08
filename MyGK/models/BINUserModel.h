@@ -11,7 +11,8 @@
 
 @interface BINUserModel : NSObject
 @property bool loginState;
-@property NSString *name;
+@property (strong,nonatomic) NSString *user;
+@property (strong,nonatomic) NSString *name;
 @property int level;
 @property (copy,nonatomic) NSArray *favList;
 @property (strong,nonatomic) UIImage *icon;

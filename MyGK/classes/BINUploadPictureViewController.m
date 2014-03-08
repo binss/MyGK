@@ -137,13 +137,17 @@
         
         BINUploadModel * upload = [[BINUploadModel alloc] init];
         upload.upLoadUser = @"bin";
+        upload.upLoadName = @"管理员";
+
         upload.name = self.nameField.text;
         upload.price = self.priceField.text;
         upload.address = self.addressField.text;
-        upload.description = @"无";
+        if(self.descriptionField.text.length)
+            upload.description = self.descriptionField.text;
+        else
+            upload.description = [NSString stringWithFormat:@"我分享了手办：%@",self.nameField.text];
         upload.upLoadImage = image;
         [upload uploadPic];
-        
 
     }
     else

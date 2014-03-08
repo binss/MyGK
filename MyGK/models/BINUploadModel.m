@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 bin. All rights reserved.
 //
 
+#import "BINUserModel.h"
 #import "BINUploadModel.h"
 #import "AFNetworking.h"
 #import "ServerAddressSetting.h"
@@ -13,6 +14,7 @@
 @implementation BINUploadModel
 @synthesize upLoadImage;
 @synthesize upLoadUser;
+@synthesize upLoadName;
 @synthesize name;
 @synthesize description;
 @synthesize address;
@@ -45,7 +47,11 @@
     
     [body appendFormat:@"%@\r\n",MPboundary];
     [body appendFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",@"user"];
-    [body appendFormat:@"%@\r\n",upLoadUser];
+    [body appendFormat:@"%@\r\n",[[BINUserModel sharedUserData] user]];
+    
+    [body appendFormat:@"%@\r\n",MPboundary];
+    [body appendFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",@"username"];
+    [body appendFormat:@"%@\r\n",[[BINUserModel sharedUserData] name]];
     
     [body appendFormat:@"%@\r\n",MPboundary];
     [body appendFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",@"name"];

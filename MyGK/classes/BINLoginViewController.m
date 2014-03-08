@@ -58,6 +58,7 @@
             if(state.boolValue)
             {
                 [[BINUserModel sharedUserData] setLoginState:YES];
+                [[BINUserModel sharedUserData] setUser:self.userTextField.text];
                 [[BINUserModel sharedUserData] setName:[responseObject objectForKey:@"name"]];
                 [[BINUserModel sharedUserData] setLevel:level.intValue];
                 [self getIcon:self.userTextField.text];

@@ -12,6 +12,7 @@ static BINUserModel *_sharedUserData= nil;   //第一步：静态实例，并初
 @implementation BINUserModel
 @synthesize loginState;
 @synthesize level;
+@synthesize user;
 @synthesize name;
 @synthesize favList;
 @synthesize icon;

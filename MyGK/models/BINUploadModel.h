@@ -12,6 +12,7 @@
 @property (strong,nonatomic) UIImage *upLoadImage;
 @property (strong,nonatomic) NSString *upLoadUser;
 @property (strong,nonatomic) NSString *name;
+@property (strong,nonatomic) NSString *upLoadName;
 @property (strong,nonatomic) NSString *price;
 @property (strong,nonatomic) NSString *address;
 @property (strong,nonatomic) NSString *description;
