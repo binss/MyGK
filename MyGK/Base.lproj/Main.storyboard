@@ -307,7 +307,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qfh-9u-qOO" kind="push" identifier="upload" id="WwO-RK-rRO"/>
+                                    <action selector="UploadPictureButtonPressed:" destination="bbu-Q5-8jf" eventType="touchUpInside" id="whL-ZO-J4x"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vir-kD-G6P">
@@ -327,7 +327,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="bzv-wR-g5L" kind="push" id="A0Z-2M-Ehy"/>
+                                    <action selector="visitDynamicButtonPressed:" destination="bbu-Q5-8jf" eventType="touchUpInside" id="9at-ba-L1D"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -341,11 +341,13 @@
                         <outlet property="nameLabel" destination="z7w-gQ-fp1" id="ovz-2v-zTj"/>
                         <outlet property="signoutButton" destination="qjv-7A-4KF" id="9T3-Aa-9TK"/>
                         <outlet property="signupButton" destination="VCh-Su-c21" id="3Ni-sn-qIo"/>
+                        <segue destination="qfh-9u-qOO" kind="push" identifier="uploadPicture" id="4BB-xE-TuT"/>
+                        <segue destination="bzv-wR-g5L" kind="push" identifier="visitDynamic" id="dR0-6K-4BY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtZ-BB-5OF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="500" y="276"/>
+            <point key="canvasLocation" x="430" y="304"/>
         </scene>
         <!--Upload Picture View Controller - 我要晒手办-->
         <scene sceneID="dN7-h1-TUH">
@@ -865,6 +867,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9Ts-ci-8B1"/>
+        <segue reference="Xha-e6-Ssb"/>
     </inferredMetricsTieBreakers>
 </document>

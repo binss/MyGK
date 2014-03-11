@@ -77,7 +77,7 @@ static BINDynamicModel *_userDynamic= nil;
          [list addObjectsFromArray:[responseObject objectForKey:@"Data"]];
          
          [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadUserDynamic" object:@"refresh"];
-         loadedRows = 8;
+         loadedRows = 6;
      }
          failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {

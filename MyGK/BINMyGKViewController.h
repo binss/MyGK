@@ -17,5 +17,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *IconButton;
 - (IBAction)signoutButtonPressed:(UIButton *)sender;
 
+
 - (IBAction)uploadPIC:(id)sender;
+
+- (IBAction)UploadPictureButtonPressed:(UIButton *)sender;
+- (IBAction)visitDynamicButtonPressed:(UIButton *)sender;
+
 @end

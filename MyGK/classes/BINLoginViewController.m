@@ -90,7 +90,7 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    NSString *str = [NSString stringWithFormat:@"%@%@.png",userIconServerAddress,user];
+    NSString *str = [NSString stringWithFormat:@"%@%@.png",iconServerAddress,user];
     NSURL *URL = [NSURL URLWithString:str];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
@@ -101,6 +101,7 @@
     } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error)
     {
       [[BINUserModel sharedUserData] setIcon:[UIImage imageWithData:[NSData dataWithContentsOfURL:filePath]]];
+        NSLog(@"%@",filePath);
     }];
     [downloadTask resume];
 }

@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol BINZoomImageDelegate <NSObject>
+- (void)removeViewCallback;
+@end
 
 
 @interface BINZoomImageView : UIView
-//@property UIScrollView *scrollView;
+{
+    id <BINZoomImageDelegate> delegate;
+
+}
 @property (strong,nonatomic) NSString *imageURL;
+@property (nonatomic, retain) id <BINZoomImageDelegate> delegate;
+
 - (void)setImage:(NSString *)str;
 @end

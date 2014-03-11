@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BINZoomImageView.h"
 
-@interface BINUserDynamicViewController : UITableViewController
+@interface BINUserDynamicViewController : UITableViewController<BINZoomImageDelegate>
 @property CGFloat lastScale;
 @end

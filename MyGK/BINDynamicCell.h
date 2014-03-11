@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UIImageView *picture;
 
-- (void)setImage:(NSString *)str;
+- (void)setIconView:(NSString *)str;
+- (void)setPictureView:(NSString *)str;
+
 - (IBAction)nameButtonPressed:(UIButton *)sender;
 @end

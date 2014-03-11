@@ -12,6 +12,8 @@
 @interface BINZoomScrollView : UIScrollView <UIScrollViewDelegate>
 
 @property (strong,nonatomic) UIImageView *imageView;
-- (CGRect)zoomRectForScale:(float)scale withCenter:(CGPoint)center;
+@property (strong,nonatomic) UIActivityIndicatorView *activityIndicatorView;
 
+- (CGRect)zoomRectForScale:(float)scale withCenter:(CGPoint)center;
+- (void)getLargeImage:(NSString *)url;
 @end

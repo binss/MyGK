@@ -8,7 +8,7 @@
 
 #import "BINDynamicCell.h"
 #import "UIImageView+AFNetworking.h"
-
+#import "ServerAddressSetting.h"
 @implementation BINDynamicCell
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -18,11 +18,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setImage:(NSString *)str
-{
-    NSURL *url = [NSURL URLWithString:str];
-    [self.icon setImageWithURL:url placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
-}
+
 
 - (IBAction)nameButtonPressed:(UIButton *)sender
 {
@@ -39,12 +35,20 @@
     
 }
 
--(void)onClickPicture
+
+- (void)setIconView:(NSString *)str
 {
-    
-    NSLog(@"图片被点击!");
+    NSString *urlstr = [NSString stringWithFormat:@"%@%@.png",iconServerAddress,str];
+
+    NSURL *url = [NSURL URLWithString:urlstr];
+    [self.icon setImageWithURL:url placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
 }
 
-
+- (void)setPictureView:(NSString *)str
+{
+    NSString *urlstr = [pictureServerAddress_small stringByAppendingString:str];
+    NSURL *url = [NSURL URLWithString:urlstr];
+    [self.picture setImageWithURL:url placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
+}
 
 @end

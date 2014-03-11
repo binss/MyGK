@@ -186,7 +186,6 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int row = indexPath.row;
     if(tableView.tag == 1)
         [BINGKlistModel GKlist].isSearch = NO;
     else

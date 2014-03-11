@@ -88,6 +88,32 @@
     
 }
 
+- (IBAction)UploadPictureButtonPressed:(UIButton *)sender
+{
+    if([[BINUserModel sharedUserData] loginState])
+    {
+        [self performSegueWithIdentifier:@"uploadPicture" sender:self];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                        message:@"请先登录"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+
+    
+}
+
+- (IBAction)visitDynamicButtonPressed:(UIButton *)sender
+{
+    [self performSegueWithIdentifier:@"visitDynamic" sender:self];
+}
+
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     //隐藏toolbar

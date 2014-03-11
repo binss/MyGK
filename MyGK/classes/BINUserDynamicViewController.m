@@ -10,10 +10,8 @@
 #import "BINDynamicCell.h"
 #import "BINDynamicModel.h"
 #import "MJRefresh.h"
-#import "BINZoomImageView.h"
 #import "BINZoomScrollView.h"
-#define BIG_IMG_WIDTH 264
-#define BIG_IMG_HEIGHT 200
+#import "ServerAddressSetting.h"
 
 static NSString *CellTableIdentifier = @"CellTableIdentifier";
 
@@ -21,17 +19,17 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
 @interface BINUserDynamicViewController ()
 @property MJRefreshHeaderView *header;
 @property MJRefreshFooterView *footer;
-@property UIView *bgView;
 @end
 
 @implementation BINUserDynamicViewController
 @synthesize header;
 @synthesize footer;
-@synthesize bgView;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
     }
     return self;
@@ -81,6 +79,13 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
     // Dispose of any resources that can be recreated.
 }
 
+-(void)dealloc
+{
+//    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:@"reloadUserDynamic"];
+    [header removeFromSuperview];
+    [footer removeFromSuperview];
+}
+
 - (void)addHeader
 {
     header = [[MJRefreshHeaderView alloc] init];
@@ -122,50 +127,52 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
     NSUInteger row = [indexPath row];
     
     BINDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
-    UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickPicture)];
+    UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickPicture:)];
     [cell.picture addGestureRecognizer:singleTap];
-    
+    UIView *singleTapView = [singleTap view];
+    singleTapView.tag = row;
     
     NSDictionary *record = [BINDynamicModel userDynamic].list[row];
 
     [cell.name setTitle:[record objectForKey:@"name"] forState:UIControlStateNormal];
     cell.content.text = [record objectForKey:@"content"];
     cell.time.text = [record objectForKey:@"time"];
-    NSLog(@"%@",[record objectForKey:@"iconurl"]);
-    [cell setImage:[record objectForKey:@"iconurl"]];
-
+    [cell setIconView:[record objectForKey:@"username"]];
+    [cell setPictureView:[record objectForKey:@"picFileName"]];
     return cell;
 }
 
-
--(void)onClickPicture
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    NSLog(@"图片被点击!");
-    [self.navigationController setNavigationBarHidden:YES];
-
-
-    [self showBigImage:@"IMG_4823"];
-
+    NSLog(@"%d",indexPath.row);
 }
 
 
-
-
-
--(void)showBigImage:(NSString *)imageName
+-(void)onClickPicture:(id)sender
 {
+    UITapGestureRecognizer *singleTap = (UITapGestureRecognizer *)sender;
+
+    
+    [self.navigationController setNavigationBarHidden:YES];
+
     BINZoomImageView *imageView = [[BINZoomImageView alloc] init];
-    [imageView setImage:@"http://127.0.0.1:8000/pic/UserUploadPic/kankore-bath-shimakaze.png/"];
+    imageView.delegate = self;
+
+    NSDictionary *record = [BINDynamicModel userDynamic].list[[singleTap view].tag];
+    NSString *urlstr = [pictureServerAddress_large stringByAppendingString:[record objectForKey:@"picFileName"]];
+
+    [imageView setImage:urlstr];
     [self.view.superview addSubview:imageView];
     
     
 }
 
--(void)removeBigImage:(UIButton *)btn{
-	[[btn superview] removeFromSuperview];
-    [self.navigationController setNavigationBarHidden:NO];
 
+
+-(void)removeViewCallback       //BINZoomImageView移除后执行的动作
+{
+    //恢复导航条
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 

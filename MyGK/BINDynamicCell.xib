@@ -40,7 +40,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile-image-placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="fBW-zT-uxh">
-                        <rect key="frame" x="79" y="88" width="120" height="120"/>
+                        <rect key="frame" x="79" y="90" width="120" height="120"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <gestureRecognizers/>
                     </imageView>

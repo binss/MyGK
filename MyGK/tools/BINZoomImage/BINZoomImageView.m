@@ -17,8 +17,8 @@
 @end
 
 @implementation BINZoomImageView
-//@synthesize scrollView;
 @synthesize zoomScrollView;
+@synthesize delegate;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -44,18 +44,18 @@
         [self addSubview:scrollView];
         
         //图层3:内层scrollview,由BINZoomScrollView实现,用于图片的滚动
-        zoomScrollView = [[BINZoomScrollView alloc]init];
+        zoomScrollView = [[BINZoomScrollView alloc] init];
         CGRect frame = scrollView.frame;
         frame.origin.x = 0;
         frame.origin.y = 0;
         zoomScrollView.frame = frame;
-//        zoomScrollView.imageView.image = [UIImage imageNamed:@"IMG_4823"];
+        
         [scrollView addSubview:zoomScrollView];
         
         UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                            action:@selector(handleSingleTap:)];
         [singleTapGesture setNumberOfTapsRequired:1];
-        [zoomScrollView.imageView addGestureRecognizer:singleTapGesture];
+        [zoomScrollView addGestureRecognizer:singleTapGesture];
         
         
         UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -64,12 +64,16 @@
         [zoomScrollView.imageView addGestureRecognizer:doubleTapGesture];
         
         [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];
+        
+
     }
     return self;
 }
 
 - (void)handleSingleTap:(UIGestureRecognizer *)gesture      //处理单击事件
 {
+    [delegate removeViewCallback];
+    
     [self removeFromSuperview];
 }
 
@@ -79,13 +83,14 @@
     float newScale = zoomScrollView.zoomScale * 1.5;
     CGRect zoomRect = [zoomScrollView zoomRectForScale:newScale withCenter:[gesture locationInView:gesture.view]];
     [zoomScrollView zoomToRect:zoomRect animated:YES];
+    
 }
 
 - (void)setImage:(NSString *)str
 {
-    NSURL *url = [NSURL URLWithString:str];
-    [zoomScrollView.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
-    
+//    NSURL *url = [NSURL URLWithString:str];
+//    [zoomScrollView.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
+    [zoomScrollView getLargeImage:str];
 }
 
 
