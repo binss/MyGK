@@ -190,6 +190,11 @@ static BINGKlistModel *_GKlist= nil;
      }];
 }
 
+- (void)setFavorite
+{
+
+}
+
 
 - (void)generalData
 {

@@ -17,6 +17,7 @@ static BINUserModel *_sharedUserData= nil;   //第一步：静态实例，并初
 @synthesize favList;
 @synthesize icon;
 
+
 + (BINUserModel*) sharedUserData  //第二步：实例构造检查静态实例是否为nil
 {
     @synchronized (self)   //@synchronized 的作用是创建一个互斥锁，保证此时没有其它线程对self对象进行修改
@@ -54,6 +55,7 @@ static BINUserModel *_sharedUserData= nil;   //第一步：静态实例，并初
         {
             loginState = NO;
             icon = [UIImage imageNamed:@"profile-image-placeholder"];
+            favList = [NSMutableArray array];
         }
         return self;
     }

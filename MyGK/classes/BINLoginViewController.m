@@ -61,7 +61,11 @@
                 [[BINUserModel sharedUserData] setUser:self.userTextField.text];
                 [[BINUserModel sharedUserData] setName:[responseObject objectForKey:@"name"]];
                 [[BINUserModel sharedUserData] setLevel:level.intValue];
+                [[[BINUserModel sharedUserData] favList] addObjectsFromArray:[responseObject objectForKey:@"favlist"]];
+                NSLog(@"%@",[[BINUserModel sharedUserData] favList]);
+
                 [self getIcon:self.userTextField.text];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"reload" object:@"refresh"];
 
                 
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"登录成功" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];

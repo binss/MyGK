@@ -45,7 +45,9 @@
     self.nameLabel.text = [[BINGKlistModel GKlist] selectedName];
     NSURL *turl = [NSURL URLWithString:[[BINGKlistModel GKlist] selectedPicURL]];
     [self.picImageView setImageWithURL:turl placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
-//    self.descriptionTextField.text = [[BINGKlistModel GKlist] selectedDescription];
+    self.priceLabel.text = [[BINGKlistModel GKlist] selectedPrice];
+    self.discountLaber.text = [[BINGKlistModel GKlist] selectedDiscount];
+    //    self.descriptionTextField.text = [[BINGKlistModel GKlist] selectedDescription];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -71,4 +73,8 @@
 }
 
 
+- (IBAction)priceHistoryButtonPressed:(UIButton *)sender
+{
+    
+}
 @end

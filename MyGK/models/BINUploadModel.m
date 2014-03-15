@@ -13,11 +13,8 @@
 
 @implementation BINUploadModel
 @synthesize upLoadImage;
-@synthesize upLoadUser;
-@synthesize upLoadName;
 @synthesize name;
 @synthesize description;
-@synthesize address;
 @synthesize price;
 
 - (void)uploadPic
@@ -64,10 +61,6 @@
     [body appendFormat:@"%@\r\n",MPboundary];
     [body appendFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",@"description"];
     [body appendFormat:@"%@\r\n",description];
-    
-    [body appendFormat:@"%@\r\n",MPboundary];
-    [body appendFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",@"address"];
-    [body appendFormat:@"%@\r\n",address];
     
     //----------字段添加结束
     
@@ -146,7 +139,7 @@
     
     [body appendFormat:@"%@\r\n",MPboundary];
     [body appendFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",@"user"];
-    [body appendFormat:@"%@\r\n",upLoadUser];
+    [body appendFormat:@"%@\r\n",[[BINUserModel sharedUserData] user]];
     
     
     
@@ -205,5 +198,25 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"iconUploadDone" object:@"fail"];
     }
     
+}
+
+- (void)uploadUserData
+{
+    if([[BINUserModel sharedUserData] loginState])
+    {
+        [[[BINUserModel sharedUserData] favList] sortedArrayUsingSelector:@selector(compare:)];
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+        NSDictionary *parameters = @{@"user":[[BINUserModel sharedUserData] user],@"favlist":[[BINUserModel sharedUserData] favList]};
+        [manager POST:userDataUploadServerAddress parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
+         {
+             NSLog(@"save");
+         }
+              failure:^(AFHTTPRequestOperation *operation, NSError *error)
+         {
+             NSLog(@"Error:%@",error);
+         }];
+    }
 }
 @end

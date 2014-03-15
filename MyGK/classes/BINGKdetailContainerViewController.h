@@ -17,5 +17,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *picImageView;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextField;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *discountLaber;
+@property (weak, nonatomic) IBOutlet UILabel *attentionLabel;
+- (IBAction)priceHistoryButtonPressed:(UIButton *)sender;
 
 @end

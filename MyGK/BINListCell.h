@@ -10,7 +10,7 @@
 
 @interface BINListCell : UITableViewCell
 
-@property int id;
+@property NSNumber *cellID;
 //@property (copy,nonatomic) NSString *name;
 //@property int price;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

@@ -8,9 +8,10 @@
 
 #import "BINListCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "BINUserModel.h"
 
 @implementation BINListCell
-
+@synthesize cellID;
 //- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 //{
 //    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -38,11 +39,33 @@
 
 - (IBAction)heartButtonPressed:(UIButton *)sender
 {
-    NSLog(@"aa");
-    if(self.heartButton.selected)
-        [self.heartButton setSelected:NO];
+    NSLog(@"%@",cellID);
+    if([[BINUserModel sharedUserData] loginState])
+    {
+        if(self.heartButton.selected)
+        {
+            [self.heartButton setSelected:NO];
+            [[[BINUserModel sharedUserData] favList] removeObject:cellID];
+            NSLog(@"%@",[[BINUserModel sharedUserData] favList]);
+        }
+        else
+        {
+            [self.heartButton setSelected:YES];
+            [[[BINUserModel sharedUserData] favList] addObject:cellID];
+            NSLog(@"%@",[[BINUserModel sharedUserData] favList]);
+
+        }
+        
+    }
     else
-        [self.heartButton setSelected:YES];
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                        message:@"请先登录"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (void)setImage:(NSString *)str
@@ -56,7 +79,6 @@
 {
     [super layoutSubviews];
     self.imageView.frame = CGRectMake(10.0f, 4.0f, 65.0f, 65.0f);
-    
 }
 
 @end

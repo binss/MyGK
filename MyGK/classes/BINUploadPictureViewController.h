@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *priceField;
-@property (weak, nonatomic) IBOutlet UITextField *addressField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionField;
 
 @property (strong, nonatomic) UIAlertView *uploadingAleatView;

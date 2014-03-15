@@ -118,14 +118,13 @@
 {
     self.nameField.text = @"";
     self.priceField.text = @"";
-    self.addressField.text = @"";
     self.descriptionField.text = @"";
     self.imageView.image = [UIImage imageNamed:@"profile-image-placeholder"];
 }
 
 - (IBAction)uploadButtonPressed:(UIButton *)sender
 {
-    if(self.nameField.text.length && self.priceField.text.length && self.addressField.text.length)
+    if(self.nameField.text.length && self.priceField.text.length)
     {
         uploadingAleatView= [[UIAlertView alloc]initWithTitle:@"正在上传中，请等待"
                                                        message:nil
@@ -136,12 +135,11 @@
         
         
         BINUploadModel * upload = [[BINUploadModel alloc] init];
-        upload.upLoadUser = @"bin";
-        upload.upLoadName = @"管理员";
+//        upload.upLoadUser = @"bin";
+//        upload.upLoadName = @"管理员";
 
         upload.name = self.nameField.text;
         upload.price = self.priceField.text;
-        upload.address = self.addressField.text;
         if(self.descriptionField.text.length)
             upload.description = self.descriptionField.text;
         else
@@ -229,7 +227,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [self.nameField resignFirstResponder];
     [self.priceField resignFirstResponder];
-    [self.addressField resignFirstResponder];
     [self.descriptionField resignFirstResponder];
     [self resumeView];
 }

@@ -219,7 +219,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 
     BINUploadModel * upload = [[BINUploadModel alloc] init];
-    upload.upLoadUser = @"bin";
     upload.upLoadImage = image;
     [upload uploadIcon];
 

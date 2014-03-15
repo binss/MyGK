@@ -12,6 +12,8 @@ extern NSString * const loginServerAddress;
 extern NSString * const signupServerAddress;
 extern NSString * const gklistServerAddress;
 extern NSString * const userIconUploadServerAddress;
+extern NSString * const userDataUploadServerAddress;
+
 extern NSString * const userDynamicServerAddress;
 
 extern NSString * const iconServerAddress;

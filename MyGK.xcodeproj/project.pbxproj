@@ -7,11 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		345DF6E518BB39EC009E0F80 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 345DF6E418BB39EC009E0F80 /* button@2x.png */; };
+		3459B43818D09DBF008BBCD8 /* big_heart_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3459B43218D09DBF008BBCD8 /* big_heart_black@2x.png */; };
+		3459B43918D09DBF008BBCD8 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3459B43318D09DBF008BBCD8 /* button@2x.png */; };
+		3459B43A18D09DBF008BBCD8 /* heart_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3459B43418D09DBF008BBCD8 /* heart_black@2x.png */; };
+		3459B43B18D09DBF008BBCD8 /* heart_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3459B43518D09DBF008BBCD8 /* heart_red@2x.png */; };
+		3459B43D18D09DBF008BBCD8 /* profile-image-placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3459B43718D09DBF008BBCD8 /* profile-image-placeholder@2x.png */; };
+		3459B43F18D09EC3008BBCD8 /* 004.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3459B43E18D09EC3008BBCD8 /* 004.jpg */; };
+		3459B44318D09FB7008BBCD8 /* bin_separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3459B44218D09FB7008BBCD8 /* bin_separator@2x.png */; };
+		3459B44518D0A41A008BBCD8 /* 7198143b7ec4168467f5dc344c797996 (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3459B44418D0A41A008BBCD8 /* 7198143b7ec4168467f5dc344c797996 (1).jpg */; };
+		3459B44818D0A5C1008BBCD8 /* BINNendoroidCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3459B44718D0A5C1008BBCD8 /* BINNendoroidCell.m */; };
+		3459B44A18D0A5D5008BBCD8 /* BINNendoroid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3459B44918D0A5D5008BBCD8 /* BINNendoroid.xib */; };
+		3459B44D18D0A748008BBCD8 /* BINNendoroidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3459B44C18D0A748008BBCD8 /* BINNendoroidViewController.m */; };
 		346E79FA18BCC1C500870DCE /* BINGKlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346E79F918BCC1C500870DCE /* BINGKlistViewController.m */; };
 		346E79FD18BCC28200870DCE /* BINListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 346E79FC18BCC28200870DCE /* BINListCell.m */; };
 		346E79FF18BCC5D100870DCE /* BINListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346E79FE18BCC5D100870DCE /* BINListCell.xib */; };
-		346E7A0118BCDC7600870DCE /* profile-image-placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 346E7A0018BCDC7600870DCE /* profile-image-placeholder@2x.png */; };
 		346E7A0718BCFD2700870DCE /* BINGKdetailContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346E7A0618BCFD2700870DCE /* BINGKdetailContainerViewController.m */; };
 		3479408918BE1DEC00F5B621 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3479407F18BE1DEC00F5B621 /* MJRefresh.bundle */; };
 		3479408A18BE1DEC00F5B621 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3479408218BE1DEC00F5B621 /* MJRefreshBaseView.m */; };
@@ -53,8 +62,6 @@
 		347BBF5718BA019000AA302E /* BINMyGKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 347BBF5618BA019000AA302E /* BINMyGKViewController.m */; };
 		347BBF6018BA17EB00AA302E /* BINUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347BBF5F18BA17EB00AA302E /* BINUserModel.m */; };
 		347D202A18BF375B0013AC2F /* BINGKlistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347D202918BF375B0013AC2F /* BINGKlistModel.m */; };
-		349B26C818BF99150055DB30 /* heart_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 349B26C718BF99150055DB30 /* heart_black@2x.png */; };
-		349B26CA18BF9A360055DB30 /* heart_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 349B26C918BF9A360055DB30 /* heart_red@2x.png */; };
 		34AF111218C49F5C004E9B2B /* BINUploadPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AF111118C49F5C004E9B2B /* BINUploadPictureViewController.m */; };
 		34AF111518C4ACF6004E9B2B /* BINUploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AF111418C4ACF6004E9B2B /* BINUploadModel.m */; };
 		34AF111818C4CFB6004E9B2B /* ServerAddressSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AF111718C4CFB6004E9B2B /* ServerAddressSetting.m */; };
@@ -66,9 +73,6 @@
 		34C3E77E18C766F8001EFBC4 /* BINUserDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3E77D18C766F8001EFBC4 /* BINUserDynamicViewController.m */; };
 		34D1C07818BA4BA1006B18C1 /* BINSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D1C07718BA4BA1006B18C1 /* BINSignupViewController.m */; };
 		34D8DFEF18C601810014EA2B /* BINIconSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D8DFEE18C601810014EA2B /* BINIconSettingViewController.m */; };
-		34F577CE18C9D06900CDE5AE /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F577CD18C9D06900CDE5AE /* close.png */; };
-		34F577E018CA102100CDE5AE /* IMG_4823.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F577DF18CA102100CDE5AE /* IMG_4823.png */; };
-		34FF821818C430D500596AD8 /* IMG_4823.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 34FF821718C430D500596AD8 /* IMG_4823.JPG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,13 +86,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		345DF6E418BB39EC009E0F80 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		3459B43218D09DBF008BBCD8 /* big_heart_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big_heart_black@2x.png"; sourceTree = "<group>"; };
+		3459B43318D09DBF008BBCD8 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		3459B43418D09DBF008BBCD8 /* heart_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart_black@2x.png"; sourceTree = "<group>"; };
+		3459B43518D09DBF008BBCD8 /* heart_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart_red@2x.png"; sourceTree = "<group>"; };
+		3459B43718D09DBF008BBCD8 /* profile-image-placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-image-placeholder@2x.png"; sourceTree = "<group>"; };
+		3459B43E18D09EC3008BBCD8 /* 004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 004.jpg; path = ../../../004.jpg; sourceTree = "<group>"; };
+		3459B44218D09FB7008BBCD8 /* bin_separator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bin_separator@2x.png"; sourceTree = "<group>"; };
+		3459B44418D0A41A008BBCD8 /* 7198143b7ec4168467f5dc344c797996 (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "7198143b7ec4168467f5dc344c797996 (1).jpg"; path = "../../../../Downloads/7198143b7ec4168467f5dc344c797996 (1).jpg"; sourceTree = "<group>"; };
+		3459B44618D0A5C1008BBCD8 /* BINNendoroidCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINNendoroidCell.h; sourceTree = "<group>"; };
+		3459B44718D0A5C1008BBCD8 /* BINNendoroidCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINNendoroidCell.m; sourceTree = "<group>"; };
+		3459B44918D0A5D5008BBCD8 /* BINNendoroid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BINNendoroid.xib; sourceTree = "<group>"; };
+		3459B44B18D0A748008BBCD8 /* BINNendoroidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINNendoroidViewController.h; sourceTree = "<group>"; };
+		3459B44C18D0A748008BBCD8 /* BINNendoroidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINNendoroidViewController.m; sourceTree = "<group>"; };
 		346E79F818BCC1C500870DCE /* BINGKlistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINGKlistViewController.h; sourceTree = "<group>"; };
 		346E79F918BCC1C500870DCE /* BINGKlistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINGKlistViewController.m; sourceTree = "<group>"; };
 		346E79FB18BCC28200870DCE /* BINListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINListCell.h; sourceTree = "<group>"; };
 		346E79FC18BCC28200870DCE /* BINListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINListCell.m; sourceTree = "<group>"; };
 		346E79FE18BCC5D100870DCE /* BINListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BINListCell.xib; sourceTree = "<group>"; };
-		346E7A0018BCDC7600870DCE /* profile-image-placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-image-placeholder@2x.png"; sourceTree = "<group>"; };
 		346E7A0518BCFD2700870DCE /* BINGKdetailContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINGKdetailContainerViewController.h; path = classes/BINGKdetailContainerViewController.h; sourceTree = "<group>"; };
 		346E7A0618BCFD2700870DCE /* BINGKdetailContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINGKdetailContainerViewController.m; path = classes/BINGKdetailContainerViewController.m; sourceTree = "<group>"; };
 		3479407F18BE1DEC00F5B621 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
@@ -164,8 +179,6 @@
 		347BBF5F18BA17EB00AA302E /* BINUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINUserModel.m; path = models/BINUserModel.m; sourceTree = "<group>"; };
 		347D202818BF375B0013AC2F /* BINGKlistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINGKlistModel.h; path = models/BINGKlistModel.h; sourceTree = "<group>"; };
 		347D202918BF375B0013AC2F /* BINGKlistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINGKlistModel.m; path = models/BINGKlistModel.m; sourceTree = "<group>"; };
-		349B26C718BF99150055DB30 /* heart_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart_black@2x.png"; sourceTree = "<group>"; };
-		349B26C918BF9A360055DB30 /* heart_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart_red@2x.png"; sourceTree = "<group>"; };
 		34AF111018C49F5C004E9B2B /* BINUploadPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINUploadPictureViewController.h; path = classes/BINUploadPictureViewController.h; sourceTree = "<group>"; };
 		34AF111118C49F5C004E9B2B /* BINUploadPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINUploadPictureViewController.m; path = classes/BINUploadPictureViewController.m; sourceTree = "<group>"; };
 		34AF111318C4ACF6004E9B2B /* BINUploadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINUploadModel.h; path = models/BINUploadModel.h; sourceTree = "<group>"; };
@@ -187,9 +200,6 @@
 		34D1C07718BA4BA1006B18C1 /* BINSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINSignupViewController.m; path = classes/BINSignupViewController.m; sourceTree = "<group>"; };
 		34D8DFED18C601810014EA2B /* BINIconSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINIconSettingViewController.h; path = classes/BINIconSettingViewController.h; sourceTree = "<group>"; };
 		34D8DFEE18C601810014EA2B /* BINIconSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINIconSettingViewController.m; path = classes/BINIconSettingViewController.m; sourceTree = "<group>"; };
-		34F577CD18C9D06900CDE5AE /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = ../../../close.png; sourceTree = "<group>"; };
-		34F577DF18CA102100CDE5AE /* IMG_4823.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_4823.png; path = ../../../IMG_4823.png; sourceTree = "<group>"; };
-		34FF821718C430D500596AD8 /* IMG_4823.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IMG_4823.JPG; path = ../../../IMG_4823.JPG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,18 +226,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		345DF6E318BB39EC009E0F80 /* resources */ = {
+		3459B43118D09DBF008BBCD8 /* myResources */ = {
 			isa = PBXGroup;
 			children = (
-				34F577CD18C9D06900CDE5AE /* close.png */,
-				346E7A0018BCDC7600870DCE /* profile-image-placeholder@2x.png */,
-				34FF821718C430D500596AD8 /* IMG_4823.JPG */,
-				34F577DF18CA102100CDE5AE /* IMG_4823.png */,
-				345DF6E418BB39EC009E0F80 /* button@2x.png */,
-				349B26C718BF99150055DB30 /* heart_black@2x.png */,
-				349B26C918BF9A360055DB30 /* heart_red@2x.png */,
+				3459B43E18D09EC3008BBCD8 /* 004.jpg */,
+				3459B43218D09DBF008BBCD8 /* big_heart_black@2x.png */,
+				3459B43318D09DBF008BBCD8 /* button@2x.png */,
+				3459B43418D09DBF008BBCD8 /* heart_black@2x.png */,
+				3459B43518D09DBF008BBCD8 /* heart_red@2x.png */,
+				3459B43718D09DBF008BBCD8 /* profile-image-placeholder@2x.png */,
+				3459B44218D09FB7008BBCD8 /* bin_separator@2x.png */,
+				3459B44418D0A41A008BBCD8 /* 7198143b7ec4168467f5dc344c797996 (1).jpg */,
 			);
-			path = resources;
+			path = myResources;
 			sourceTree = SOURCE_ROOT;
 		};
 		3479407E18BE1DEC00F5B621 /* MJRefresh */ = {
@@ -288,12 +299,14 @@
 				347D202B18BF417D0013AC2F /* Models */,
 				347BBF1118B98F1000AA302E /* classes */,
 				347BBEEB18B989EE00AA302E /* Main.storyboard */,
+				3459B44B18D0A748008BBCD8 /* BINNendoroidViewController.h */,
+				3459B44C18D0A748008BBCD8 /* BINNendoroidViewController.m */,
 				346E79F818BCC1C500870DCE /* BINGKlistViewController.h */,
 				346E79F918BCC1C500870DCE /* BINGKlistViewController.m */,
 				347BBF5518BA019000AA302E /* BINMyGKViewController.h */,
 				347BBF5618BA019000AA302E /* BINMyGKViewController.m */,
 				347BBEF118B989EE00AA302E /* Images.xcassets */,
-				345DF6E318BB39EC009E0F80 /* resources */,
+				3459B43118D09DBF008BBCD8 /* myResources */,
 				347BBF1618B9986D00AA302E /* tools */,
 				347BBEE018B989EE00AA302E /* Supporting Files */,
 			);
@@ -446,6 +459,9 @@
 				34C3E76F18C753A0001EFBC4 /* BINDynamicCell.h */,
 				34C3E77018C753A0001EFBC4 /* BINDynamicCell.m */,
 				34C3E77318C753D2001EFBC4 /* BINDynamicCell.xib */,
+				3459B44618D0A5C1008BBCD8 /* BINNendoroidCell.h */,
+				3459B44718D0A5C1008BBCD8 /* BINNendoroidCell.m */,
+				3459B44918D0A5D5008BBCD8 /* BINNendoroid.xib */,
 			);
 			name = tabelViewCells;
 			sourceTree = "<group>";
@@ -527,19 +543,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3459B44518D0A41A008BBCD8 /* 7198143b7ec4168467f5dc344c797996 (1).jpg in Resources */,
 				347BBEF218B989EE00AA302E /* Images.xcassets in Resources */,
-				349B26CA18BF9A360055DB30 /* heart_red@2x.png in Resources */,
-				34F577E018CA102100CDE5AE /* IMG_4823.png in Resources */,
+				3459B43B18D09DBF008BBCD8 /* heart_red@2x.png in Resources */,
 				347BBEE418B989EE00AA302E /* InfoPlist.strings in Resources */,
+				3459B43818D09DBF008BBCD8 /* big_heart_black@2x.png in Resources */,
+				3459B43D18D09DBF008BBCD8 /* profile-image-placeholder@2x.png in Resources */,
+				3459B43F18D09EC3008BBCD8 /* 004.jpg in Resources */,
 				34C3E77418C753D2001EFBC4 /* BINDynamicCell.xib in Resources */,
 				3479408918BE1DEC00F5B621 /* MJRefresh.bundle in Resources */,
 				347BBEED18B989EE00AA302E /* Main.storyboard in Resources */,
-				34F577CE18C9D06900CDE5AE /* close.png in Resources */,
-				34FF821818C430D500596AD8 /* IMG_4823.JPG in Resources */,
-				345DF6E518BB39EC009E0F80 /* button@2x.png in Resources */,
-				346E7A0118BCDC7600870DCE /* profile-image-placeholder@2x.png in Resources */,
+				3459B44318D09FB7008BBCD8 /* bin_separator@2x.png in Resources */,
+				3459B44A18D0A5D5008BBCD8 /* BINNendoroid.xib in Resources */,
+				3459B43918D09DBF008BBCD8 /* button@2x.png in Resources */,
 				346E79FF18BCC5D100870DCE /* BINListCell.xib in Resources */,
-				349B26C818BF99150055DB30 /* heart_black@2x.png in Resources */,
+				3459B43A18D09DBF008BBCD8 /* heart_black@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,10 +600,12 @@
 				347BBF4718B9986D00AA302E /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				347BBEE618B989EE00AA302E /* main.m in Sources */,
 				346E79FA18BCC1C500870DCE /* BINGKlistViewController.m in Sources */,
+				3459B44818D0A5C1008BBCD8 /* BINNendoroidCell.m in Sources */,
 				34AF111518C4ACF6004E9B2B /* BINUploadModel.m in Sources */,
 				347BBF4318B9986D00AA302E /* AFURLRequestSerialization.m in Sources */,
 				347BBF3F18B9986D00AA302E /* AFHTTPSessionManager.m in Sources */,
 				34B475F218CCC13400EA1D8C /* BINZoomImageView.m in Sources */,
+				3459B44D18D0A748008BBCD8 /* BINNendoroidViewController.m in Sources */,
 				347BBF4018B9986D00AA302E /* AFNetworkReachabilityManager.m in Sources */,
 				347BBF6018BA17EB00AA302E /* BINUserModel.m in Sources */,
 				34C3E77118C753A0001EFBC4 /* BINDynamicCell.m in Sources */,

@@ -10,6 +10,7 @@
 #import "BINListCell.h"
 #import "AFNetworking.h"
 #import "MJRefresh.h"
+#import "BINUserModel.h"
 
 @interface BINGKlistViewController ()
 @property MJRefreshHeaderView *header;
@@ -176,11 +177,28 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
     {
         record = [BINGKlistModel GKlist].searchList[row];
     }
+    cell.cellID = [record objectForKey:@"id"];
     cell.nameLabel.text = [record objectForKey:@"name"];
     cell.priceLabel.text = [record objectForKey:@"price"];
     cell.discountLabel.text = [record objectForKey:@"discount"];
     [cell setImage:[record objectForKey:@"picurl"]];
+    
+    //如果已经登录
+    if([[BINUserModel sharedUserData] loginState])
+    {
+        if(tableView.tag == 1)
+            record = [BINGKlistModel GKlist].list[row];
+        else
+            record = [BINGKlistModel GKlist].searchList[row];
 
+        for(NSNumber *num in [[BINUserModel sharedUserData] favList])
+        {
+            if([record objectForKey:@"id"] == num)
+            {
+                [cell.heartButton setSelected:YES];
+            }
+        }
+    }
     return cell;
 }
 
@@ -283,17 +301,6 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
 
 
 
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 
 @end
