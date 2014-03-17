@@ -96,7 +96,7 @@
     //设置HTTPHeader
     [request setValue:content forHTTPHeaderField:@"Content-Type"];
     //设置Content-Length
-    [request setValue:[NSString stringWithFormat:@"%d", [myRequestData length]] forHTTPHeaderField:@"Content-Length"];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[myRequestData length]] forHTTPHeaderField:@"Content-Length"];
     //设置http body
     [request setHTTPBody:myRequestData];
     //http method
@@ -175,7 +175,7 @@
     //设置HTTPHeader
     [request setValue:content forHTTPHeaderField:@"Content-Type"];
     //设置Content-Length
-    [request setValue:[NSString stringWithFormat:@"%d", [myRequestData length]] forHTTPHeaderField:@"Content-Length"];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[myRequestData length]] forHTTPHeaderField:@"Content-Length"];
     //设置http body
     [request setHTTPBody:myRequestData];
     //http method

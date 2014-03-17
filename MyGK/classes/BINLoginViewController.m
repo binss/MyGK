@@ -48,7 +48,9 @@
     {
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+        
         NSDictionary *parameters = @{@"user":self.userTextField.text,@"password":self.passwordTextField.text};
+
         [manager POST:@"http://127.0.0.1:8000/login/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
         {
             NSLog(@"JSON: %@",responseObject);

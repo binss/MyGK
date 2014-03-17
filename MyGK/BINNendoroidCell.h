@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface BINNendoroidCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+//- (void)setImage:(NSString *)str;
+@property (weak, nonatomic) IBOutlet UILabel *no;
 
 @end

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BINNendoroidViewController : UICollectionViewController
-
+@property (strong,nonatomic) NSMutableArray * nendoroidList;
 @end

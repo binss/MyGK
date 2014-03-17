@@ -12,7 +12,7 @@
 #import "MJRefresh.h"
 #import "BINUserModel.h"
 
-@interface BINGKlistViewController ()
+@interface BINGKlistViewController () <MJRefreshBaseViewDelegate>
 @property MJRefreshHeaderView *header;
 @property MJRefreshFooterView *footer;
 @property MJRefreshFooterView *searchFooter;

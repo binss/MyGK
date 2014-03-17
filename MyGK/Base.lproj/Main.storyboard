@@ -56,16 +56,6 @@
                                 <outlet property="delegate" destination="DPI-8S-OyJ" id="77C-Bb-JeI"/>
                             </connections>
                         </searchBar>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0vs-i0-ovF">
-                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0vs-i0-ovF" id="f6N-ey-Wvr">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="DPI-8S-OyJ" id="AC5-NP-79f"/>
                             <outlet property="delegate" destination="DPI-8S-OyJ" id="qBS-1d-3BN"/>
@@ -505,7 +495,7 @@
             </objects>
             <point key="canvasLocation" x="-231" y="1958"/>
         </scene>
-        <!--Nendoroid View Controller-->
+        <!--Nendoroid View Controller - 粘土大集合-->
         <scene sceneID="BCO-ZS-AVQ">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="nyw-66-sst" customClass="BINNendoroidViewController" sceneMemberID="viewController">
@@ -526,7 +516,7 @@
                             <outlet property="delegate" destination="nyw-66-sst" id="Ver-Mu-q7C"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Qcm-H9-d5m"/>
+                    <navigationItem key="navigationItem" title="粘土大集合" id="Qcm-H9-d5m"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nsm-3q-9rJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

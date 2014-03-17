@@ -16,7 +16,7 @@
 static NSString *CellTableIdentifier = @"CellTableIdentifier";
 
 
-@interface BINUserDynamicViewController ()
+@interface BINUserDynamicViewController () <MJRefreshBaseViewDelegate>
 @property MJRefreshHeaderView *header;
 @property MJRefreshFooterView *footer;
 @end

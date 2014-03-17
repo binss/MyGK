@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *discountLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (readonly, nonatomic) IBOutlet UIImageView *imageView;
 - (IBAction)heartButtonPressed:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *heartButton;
 
