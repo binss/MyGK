@@ -26,12 +26,12 @@
 @property (strong,nonatomic) NSMutableArray *searchList;
 @property (strong,nonatomic) AFHTTPRequestOperationManager *manager;
 
++ (BINGKlistModel*) GKlist;
 
 - (void)getDataFromServer;
 - (void)getDetailFromServer;
 - (void)generalData;
 - (void)getMoreDataFromServer;
-+ (BINGKlistModel*) GKlist;
 - (void)getSearchResultFromServer:(NSString *)searchString;
 - (void)getMoreSearchResultFromServer:(NSString *)searchString;
 

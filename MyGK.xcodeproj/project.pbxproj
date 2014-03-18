@@ -60,6 +60,7 @@
 		347BBF5718BA019000AA302E /* BINMyGKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 347BBF5618BA019000AA302E /* BINMyGKViewController.m */; };
 		347BBF6018BA17EB00AA302E /* BINUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347BBF5F18BA17EB00AA302E /* BINUserModel.m */; };
 		347D202A18BF375B0013AC2F /* BINGKlistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347D202918BF375B0013AC2F /* BINGKlistModel.m */; };
+		348833D818D88E580007F64C /* BINNendoroidModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 348833D718D88E580007F64C /* BINNendoroidModel.m */; };
 		3492D88918D7162A0000C26B /* Nendoroid.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3492D88818D7162A0000C26B /* Nendoroid.bundle */; };
 		3492D88D18D717440000C26B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3492D88C18D717440000C26B /* libsqlite3.dylib */; };
 		3492D89218D723F80000C26B /* MyGKDataBase.db in Resources */ = {isa = PBXBuildFile; fileRef = 3492D89118D723810000C26B /* MyGKDataBase.db */; };
@@ -178,6 +179,8 @@
 		347BBF5F18BA17EB00AA302E /* BINUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINUserModel.m; path = models/BINUserModel.m; sourceTree = "<group>"; };
 		347D202818BF375B0013AC2F /* BINGKlistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINGKlistModel.h; path = models/BINGKlistModel.h; sourceTree = "<group>"; };
 		347D202918BF375B0013AC2F /* BINGKlistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINGKlistModel.m; path = models/BINGKlistModel.m; sourceTree = "<group>"; };
+		348833D618D88E580007F64C /* BINNendoroidModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINNendoroidModel.h; path = models/BINNendoroidModel.h; sourceTree = "<group>"; };
+		348833D718D88E580007F64C /* BINNendoroidModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINNendoroidModel.m; path = models/BINNendoroidModel.m; sourceTree = "<group>"; };
 		3492D88818D7162A0000C26B /* Nendoroid.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Nendoroid.bundle; sourceTree = "<group>"; };
 		3492D88A18D7170F0000C26B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		3492D88C18D717440000C26B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -441,6 +444,8 @@
 				34AF111418C4ACF6004E9B2B /* BINUploadModel.m */,
 				34C3E77818C75E92001EFBC4 /* BINDynamicModel.h */,
 				34C3E77918C75E92001EFBC4 /* BINDynamicModel.m */,
+				348833D618D88E580007F64C /* BINNendoroidModel.h */,
+				348833D718D88E580007F64C /* BINNendoroidModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -604,6 +609,7 @@
 				3479408B18BE1DEC00F5B621 /* MJRefreshConst.m in Sources */,
 				347BBF3D18B9986D00AA302E /* AFHTTPRequestOperation.m in Sources */,
 				347BBF4718B9986D00AA302E /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				348833D818D88E580007F64C /* BINNendoroidModel.m in Sources */,
 				347BBEE618B989EE00AA302E /* main.m in Sources */,
 				346E79FA18BCC1C500870DCE /* BINGKlistViewController.m in Sources */,
 				3459B44818D0A5C1008BBCD8 /* BINNendoroidCell.m in Sources */,

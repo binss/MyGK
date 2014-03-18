@@ -522,6 +522,14 @@
             </objects>
             <point key="canvasLocation" x="199" y="1960"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="aH1-fx-Rj7">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="NPa-qZ-VMR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Arm-kr-LFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="1992"/>
+        </scene>
         <!--User Dynamic View Controller - 动态-->
         <scene sceneID="pIj-0a-wmA">
             <objects>
