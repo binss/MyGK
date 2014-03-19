@@ -6,13 +6,18 @@
 //  Copyright (c) 2014年 bin. All rights reserved.
 //
 
-#import <sqlite3.h>
 #import "BINNendoroidModel.h"
 static BINNendoroidModel *_sharedNendoroid= nil;
 
 @implementation BINNendoroidModel
 @synthesize database;
 @synthesize nendoroidList;
+@synthesize workName;
+@synthesize price;
+@synthesize time;
+@synthesize description;
+@synthesize imageNum;
+@synthesize selectedNendoroid;
 
 + (BINNendoroidModel*) sharedNendoroid
 {
@@ -100,9 +105,11 @@ static BINNendoroidModel *_sharedNendoroid= nil;
 
 - (void)getNendoroidDetail:(NSString *)itemNum
 {
-//    NSString *querySQL = [NSString stringWithFormat:@"select * from Nendoroid WHERE itemNum == %@",
-//                          itemNum];
-    NSString *querySQL = @"select * from Nendoroid WHERE itemNum = '002'";
+    NSString *querySQL = [NSString stringWithFormat:@"select * from Nendoroid WHERE itemNum = '%@'",
+                          itemNum];
+    selectedNendoroid = itemNum;
+    
+//    NSString *querySQL = @"select * from Nendoroid WHERE itemNum = '403'";
     sqlite3_stmt *statement;
     //执行查询
     int result = sqlite3_prepare(database, [querySQL UTF8String], -1, &statement, nil);
@@ -114,17 +121,14 @@ static BINNendoroidModel *_sharedNendoroid= nil;
         while (sqlite3_step(statement) == SQLITE_ROW)
         {
             char * workName_char = (char *)sqlite3_column_text(statement, 3);
-            NSString *workName = [NSString stringWithUTF8String:workName_char];
+            workName = [NSString stringWithUTF8String:workName_char];
             char * price_char = (char *)sqlite3_column_text(statement, 4);
-            NSString *price = [NSString stringWithUTF8String:price_char];
+            price = [NSString stringWithUTF8String:price_char];
             char * time_char = (char *)sqlite3_column_text(statement, 5);
-            NSString *time = [NSString stringWithUTF8String:time_char];
-            int imageNum = (int)sqlite3_column_text(statement, 6);
+            time = [NSString stringWithUTF8String:time_char];
+            imageNum = sqlite3_column_int(statement, 6);
             char * description_char = (char *)sqlite3_column_text(statement, 8);
-            NSString *description = [NSString stringWithUTF8String:description_char];
-
-            NSLog(@"??%@",description);
-
+            description = [NSString stringWithUTF8String:description_char];
         }
         sqlite3_finalize(statement);
     }

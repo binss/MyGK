@@ -162,10 +162,10 @@
             </objects>
             <point key="canvasLocation" x="148" y="-438"/>
         </scene>
-        <!--View Controller - 详细状况-->
+        <!--Scroll View Controller - 详细状况-->
         <scene sceneID="BRD-QG-HRm">
             <objects>
-                <viewController id="zNE-Pr-Mov" sceneMemberID="viewController">
+                <viewController id="zNE-Pr-Mov" customClass="BINScrollViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i3Y-Gt-eeo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,16 +183,15 @@
                                         </connections>
                                     </containerView>
                                 </subviews>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
-                                        <size key="value" width="320" height="800"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="详细状况" id="5f2-ae-ifz"/>
+                    <connections>
+                        <outlet property="container" destination="2Mv-Ej-BlF" id="5GU-nd-2UY"/>
+                        <outlet property="scrollView" destination="HFx-ng-qvc" id="DcX-qO-A1V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpe-T6-zLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -213,7 +212,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORF-Jd-jhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926" y="1251"/>
+            <point key="canvasLocation" x="1998" y="887"/>
         </scene>
         <!--Navigation Controller - 我的手办-->
         <scene sceneID="7Oi-Rh-bAe">
@@ -517,18 +516,47 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="粘土大集合" id="Qcm-H9-d5m"/>
+                    <connections>
+                        <segue destination="Rh7-IX-zMY" kind="push" identifier="nendoroidDetail" id="2F6-Pb-PMw"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nsm-3q-9rJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="199" y="1960"/>
+            <point key="canvasLocation" x="339" y="1960"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="aH1-fx-Rj7">
+        <!--Nendoroid Detail View Controller-->
+        <scene sceneID="84r-lj-vSd">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="NPa-qZ-VMR" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Arm-kr-LFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Rh7-IX-zMY" customClass="BINNendoroidDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yWC-XS-h5U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="xZG-cy-Tvq">
+                                <rect key="frame" x="0.0" y="65" width="320" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1TW-xZ-g1a"/>
+                    <connections>
+                        <outlet property="imageScrollView" destination="xZG-cy-Tvq" id="8zP-Zl-kEJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5CF-Qa-CtU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Oxq-49-8q9">
+                    <connections>
+                        <action selector="swipeAction:" destination="Rh7-IX-zMY" id="paT-4o-aem"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="kJC-nl-f2F">
+                    <connections>
+                        <action selector="swipeAction:" destination="Rh7-IX-zMY" id="dVi-e2-Wvl"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="787" y="1992"/>
+            <point key="canvasLocation" x="883" y="1960"/>
         </scene>
         <!--User Dynamic View Controller - 动态-->
         <scene sceneID="pIj-0a-wmA">
@@ -722,7 +750,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEh-p9-kRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1537" y="1903"/>
+            <point key="canvasLocation" x="1509" y="887"/>
         </scene>
         <!--Login View Controller - 登录-->
         <scene sceneID="d6e-Ap-CQx">

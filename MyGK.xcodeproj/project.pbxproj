@@ -74,6 +74,8 @@
 		34C3E77A18C75E92001EFBC4 /* BINDynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3E77918C75E92001EFBC4 /* BINDynamicModel.m */; };
 		34C3E77E18C766F8001EFBC4 /* BINUserDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3E77D18C766F8001EFBC4 /* BINUserDynamicViewController.m */; };
 		34D1C07818BA4BA1006B18C1 /* BINSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D1C07718BA4BA1006B18C1 /* BINSignupViewController.m */; };
+		34D2B88218D99A8600629F50 /* BINNendoroidDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2B88118D99A8600629F50 /* BINNendoroidDetailViewController.m */; };
+		34D2B88518D9B9FB00629F50 /* BINScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2B88418D9B9FB00629F50 /* BINScrollViewController.m */; };
 		34D8DFEF18C601810014EA2B /* BINIconSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D8DFEE18C601810014EA2B /* BINIconSettingViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -204,6 +206,10 @@
 		34C3E77D18C766F8001EFBC4 /* BINUserDynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINUserDynamicViewController.m; path = classes/BINUserDynamicViewController.m; sourceTree = "<group>"; };
 		34D1C07618BA4BA1006B18C1 /* BINSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINSignupViewController.h; path = classes/BINSignupViewController.h; sourceTree = "<group>"; };
 		34D1C07718BA4BA1006B18C1 /* BINSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINSignupViewController.m; path = classes/BINSignupViewController.m; sourceTree = "<group>"; };
+		34D2B88018D99A8600629F50 /* BINNendoroidDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINNendoroidDetailViewController.h; path = classes/BINNendoroidDetailViewController.h; sourceTree = "<group>"; };
+		34D2B88118D99A8600629F50 /* BINNendoroidDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINNendoroidDetailViewController.m; path = classes/BINNendoroidDetailViewController.m; sourceTree = "<group>"; };
+		34D2B88318D9B9FB00629F50 /* BINScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINScrollViewController.h; path = classes/BINScrollViewController.h; sourceTree = "<group>"; };
+		34D2B88418D9B9FB00629F50 /* BINScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINScrollViewController.m; path = classes/BINScrollViewController.m; sourceTree = "<group>"; };
 		34D8DFED18C601810014EA2B /* BINIconSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINIconSettingViewController.h; path = classes/BINIconSettingViewController.h; sourceTree = "<group>"; };
 		34D8DFEE18C601810014EA2B /* BINIconSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINIconSettingViewController.m; path = classes/BINIconSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -368,6 +374,10 @@
 				34D8DFEE18C601810014EA2B /* BINIconSettingViewController.m */,
 				34C3E77C18C766F8001EFBC4 /* BINUserDynamicViewController.h */,
 				34C3E77D18C766F8001EFBC4 /* BINUserDynamicViewController.m */,
+				34D2B88318D9B9FB00629F50 /* BINScrollViewController.h */,
+				34D2B88418D9B9FB00629F50 /* BINScrollViewController.m */,
+				34D2B88018D99A8600629F50 /* BINNendoroidDetailViewController.h */,
+				34D2B88118D99A8600629F50 /* BINNendoroidDetailViewController.m */,
 			);
 			name = classes;
 			sourceTree = "<group>";
@@ -614,6 +624,7 @@
 				346E79FA18BCC1C500870DCE /* BINGKlistViewController.m in Sources */,
 				3459B44818D0A5C1008BBCD8 /* BINNendoroidCell.m in Sources */,
 				34AF111518C4ACF6004E9B2B /* BINUploadModel.m in Sources */,
+				34D2B88518D9B9FB00629F50 /* BINScrollViewController.m in Sources */,
 				347BBF4318B9986D00AA302E /* AFURLRequestSerialization.m in Sources */,
 				347BBF3F18B9986D00AA302E /* AFHTTPSessionManager.m in Sources */,
 				34B475F218CCC13400EA1D8C /* BINZoomImageView.m in Sources */,
@@ -622,6 +633,7 @@
 				347BBF6018BA17EB00AA302E /* BINUserModel.m in Sources */,
 				34C3E77118C753A0001EFBC4 /* BINDynamicCell.m in Sources */,
 				3479408A18BE1DEC00F5B621 /* MJRefreshBaseView.m in Sources */,
+				34D2B88218D99A8600629F50 /* BINNendoroidDetailViewController.m in Sources */,
 				347BBF4418B9986D00AA302E /* AFURLResponseSerialization.m in Sources */,
 				3479408D18BE1DEC00F5B621 /* MJRefreshHeaderView.m in Sources */,
 				346E79FD18BCC28200870DCE /* BINListCell.m in Sources */,

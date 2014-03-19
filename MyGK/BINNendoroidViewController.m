@@ -109,6 +109,15 @@ static NSString *cellIdentifier = @"nendoroidCell";
 {
     NSDictionary * dict = [[BINNendoroidModel sharedNendoroid].nendoroidList objectAtIndex:indexPath.row];
     [[BINNendoroidModel sharedNendoroid] getNendoroidDetail:[dict objectForKey:@"itemNum"]];
+    
+    [self performSegueWithIdentifier:@"nendoroidDetail" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    //隐藏toolbar
+    [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+    //    self.navigationItem.backBarButtonItem= [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:nil];
 }
 
 
