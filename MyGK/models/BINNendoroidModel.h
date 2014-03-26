@@ -15,13 +15,15 @@
 @property (strong,nonatomic) NSMutableArray * nendoroidList;
 
 @property sqlite3 *database;
-@property (strong,nonatomic) NSString * selectedNendoroid;
-@property (strong,nonatomic) NSString * workName;
-@property (strong,nonatomic) NSString * price;
+@property (strong,nonatomic) NSString * selected_itemNum;
 @property int imageNum;
-@property (strong,nonatomic) NSString * time;
-@property (strong,nonatomic) NSString * description;
+@property (strong,nonatomic) NSString * selected_productName;
+@property (strong,nonatomic) NSString * selected_workName;
+@property (strong,nonatomic) NSString * selected_price;
+@property (strong,nonatomic) NSString * selected_time;
+@property (strong,nonatomic) NSString * selected_description;
 
 - (void)addNendoroidRecord;
 - (void)getNendoroidDetail:(NSString *)itemNum;
+- (void)checkItemNum:(NSString *)itemNum;
 @end

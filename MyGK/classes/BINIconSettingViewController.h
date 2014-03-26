@@ -8,17 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BINIconSettingViewController : UIViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface BINIconSettingViewController : UIViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
 
-- (IBAction)shootPicture:(UIButton *)sender;
-- (IBAction)selectExistingPicture:(UIButton *)sender;
+
 - (IBAction)uploadButtonPressed:(UIButton *)sender;
 - (IBAction)saveButtonPressed:(UIButton *)sender;
+- (IBAction)imageViewPressed:(UIButton *)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *uploadButton;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+//@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *imageView;
 
 
 

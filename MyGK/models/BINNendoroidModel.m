@@ -12,12 +12,13 @@ static BINNendoroidModel *_sharedNendoroid= nil;
 @implementation BINNendoroidModel
 @synthesize database;
 @synthesize nendoroidList;
-@synthesize workName;
-@synthesize price;
-@synthesize time;
-@synthesize description;
+@synthesize selected_itemNum;
+@synthesize selected_productName;
+@synthesize selected_workName;
+@synthesize selected_price;
+@synthesize selected_time;
+@synthesize selected_description;
 @synthesize imageNum;
-@synthesize selectedNendoroid;
 
 + (BINNendoroidModel*) sharedNendoroid
 {
@@ -107,7 +108,7 @@ static BINNendoroidModel *_sharedNendoroid= nil;
 {
     NSString *querySQL = [NSString stringWithFormat:@"select * from Nendoroid WHERE itemNum = '%@'",
                           itemNum];
-    selectedNendoroid = itemNum;
+    selected_itemNum = itemNum;
     
 //    NSString *querySQL = @"select * from Nendoroid WHERE itemNum = '403'";
     sqlite3_stmt *statement;
@@ -116,21 +117,43 @@ static BINNendoroidModel *_sharedNendoroid= nil;
 
     if (result == SQLITE_OK)
     {
-
         //如果查询有语句就执行step来添加数据
         while (sqlite3_step(statement) == SQLITE_ROW)
         {
+            char * productName_char = (char *)sqlite3_column_text(statement, 2);
+            selected_productName = [NSString stringWithUTF8String:productName_char];
             char * workName_char = (char *)sqlite3_column_text(statement, 3);
-            workName = [NSString stringWithUTF8String:workName_char];
+            selected_workName = [NSString stringWithUTF8String:workName_char];
             char * price_char = (char *)sqlite3_column_text(statement, 4);
-            price = [NSString stringWithUTF8String:price_char];
+            selected_price = [NSString stringWithUTF8String:price_char];
             char * time_char = (char *)sqlite3_column_text(statement, 5);
-            time = [NSString stringWithUTF8String:time_char];
+            selected_time = [NSString stringWithUTF8String:time_char];
             imageNum = sqlite3_column_int(statement, 6);
             char * description_char = (char *)sqlite3_column_text(statement, 8);
-            description = [NSString stringWithUTF8String:description_char];
+            selected_description = [NSString stringWithUTF8String:description_char];
         }
         sqlite3_finalize(statement);
+    }
+}
+
+- (void)checkItemNum:(NSString *)itemNum
+{
+    NSString *querySQL = [NSString stringWithFormat:@"select * from Nendoroid WHERE itemNum = '%@'",
+                          itemNum];
+    sqlite3_stmt *statement;
+
+    int result = sqlite3_prepare(database, [querySQL UTF8String], -1, &statement, nil);
+    
+    if (result == SQLITE_OK && sqlite3_step(statement) == SQLITE_ROW)
+    {
+        [self getNendoroidDetail:itemNum];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"loadNendoroidDetail" object:@"success"];
+
+    }
+    else
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"loadNendoroidDetail" object:@"fail"];
     }
 }
 

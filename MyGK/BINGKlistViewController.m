@@ -300,7 +300,10 @@ static NSString *CellTableIdentifier = @"CellTableIdentifier";
 //}
 
 
-
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 @end

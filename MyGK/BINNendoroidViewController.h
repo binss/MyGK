@@ -8,5 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BINNendoroidViewController : UICollectionViewController
+@interface BINNendoroidViewController : UICollectionViewController <UIAlertViewDelegate>
+- (IBAction)searchButtonPressed:(UIBarButtonItem *)sender;
+
 @end

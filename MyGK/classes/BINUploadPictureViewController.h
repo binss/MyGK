@@ -8,16 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BINUploadPictureViewController : UIViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface BINUploadPictureViewController : UIViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
 
-- (IBAction)shootPicture:(UIButton *)sender;
-- (IBAction)selectExistingPicture:(UIButton *)sender;
 - (IBAction)resetButtonPressed:(UIButton *)sender;
 - (IBAction)uploadButtonPressed:(UIButton *)sender;
 - (IBAction)backgroundTap:(UIControl *)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *upLoadButton;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *priceField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionField;
@@ -28,6 +26,9 @@
 @property (strong, nonatomic) UIImage *showImage;
 
 @property (copy, nonatomic) NSString *chosenMediaType;
+
+
+- (IBAction)imageViewPressed:(UIButton *)sender;
 
 
 @end

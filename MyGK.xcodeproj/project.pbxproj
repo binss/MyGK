@@ -77,6 +77,7 @@
 		34D2B88218D99A8600629F50 /* BINNendoroidDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2B88118D99A8600629F50 /* BINNendoroidDetailViewController.m */; };
 		34D2B88518D9B9FB00629F50 /* BINScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2B88418D9B9FB00629F50 /* BINScrollViewController.m */; };
 		34D8DFEF18C601810014EA2B /* BINIconSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D8DFEE18C601810014EA2B /* BINIconSettingViewController.m */; };
+		34FD44A218E31B3C0007B045 /* clicked_change@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34FD44A118E31B3C0007B045 /* clicked_change@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +213,7 @@
 		34D2B88418D9B9FB00629F50 /* BINScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINScrollViewController.m; path = classes/BINScrollViewController.m; sourceTree = "<group>"; };
 		34D8DFED18C601810014EA2B /* BINIconSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BINIconSettingViewController.h; path = classes/BINIconSettingViewController.h; sourceTree = "<group>"; };
 		34D8DFEE18C601810014EA2B /* BINIconSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BINIconSettingViewController.m; path = classes/BINIconSettingViewController.m; sourceTree = "<group>"; };
+		34FD44A118E31B3C0007B045 /* clicked_change@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clicked_change@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 				3459B43518D09DBF008BBCD8 /* heart_red@2x.png */,
 				3459B43718D09DBF008BBCD8 /* profile-image-placeholder@2x.png */,
 				3459B44218D09FB7008BBCD8 /* bin_separator@2x.png */,
+				34FD44A118E31B3C0007B045 /* clicked_change@2x.png */,
 				3492D88818D7162A0000C26B /* Nendoroid.bundle */,
 			);
 			path = myResources;
@@ -570,6 +573,7 @@
 				3492D88918D7162A0000C26B /* Nendoroid.bundle in Resources */,
 				347BBEE418B989EE00AA302E /* InfoPlist.strings in Resources */,
 				3459B43818D09DBF008BBCD8 /* big_heart_black@2x.png in Resources */,
+				34FD44A218E31B3C0007B045 /* clicked_change@2x.png in Resources */,
 				3459B43D18D09DBF008BBCD8 /* profile-image-placeholder@2x.png in Resources */,
 				34C3E77418C753D2001EFBC4 /* BINDynamicCell.xib in Resources */,
 				3479408918BE1DEC00F5B621 /* MJRefresh.bundle in Resources */,

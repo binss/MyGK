@@ -34,8 +34,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(uploadDone:) name:@"iconUploadDone" object:nil];
-    self.imageView.image = [[BINUserModel sharedUserData] icon];
-
+    
+    [self.imageView setBackgroundImage:[[BINUserModel sharedUserData] icon] forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -55,7 +55,8 @@
     self.uploadButton.enabled = NO;
     if ([self.chosenMediaType isEqual:(NSString *)kUTTypeImage])
     {
-        self.imageView.image = image;
+        [self.imageView setBackgroundImage:image forState:UIControlStateNormal];
+
         self.uploadButton.enabled = YES;
     }
     else if([chosenMediaType isEqual:(NSString *)kUTTypeMovie])
@@ -194,18 +195,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
 }
 
-- (IBAction)shootPicture:(UIButton *)sender
+- (IBAction)imageViewPressed:(UIButton *)sender
 {
-    //加载来自相机的文件
-    [self pickMediaFromSource:UIImagePickerControllerSourceTypeCamera];
-    
-}
-
-- (IBAction)selectExistingPicture:(UIButton *)sender
-{
-    //加载来自媒体库的文件
-    [self pickMediaFromSource:UIImagePickerControllerSourceTypePhotoLibrary];
-    
+    UIActionSheet *choiceSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                             delegate:self
+                                                    cancelButtonTitle:@"取消"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"拍照", @"从相册中选取", nil];
+    [choiceSheet showInView:self.view];
 }
 
 - (IBAction)uploadButtonPressed:(UIButton *)sender
@@ -222,5 +219,18 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     upload.upLoadImage = image;
     [upload uploadIcon];
 
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        //加载来自相机的文件
+        [self pickMediaFromSource:UIImagePickerControllerSourceTypeCamera];
+    }else if (buttonIndex == 1)
+    {
+        //加载来自媒体库的文件
+        [self pickMediaFromSource:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
 }
 @end

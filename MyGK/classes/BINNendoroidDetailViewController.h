@@ -14,4 +14,11 @@
 
 @property bool pageControlScrolling;
 @property int currentImageX;
+@property (weak, nonatomic) IBOutlet UILabel *itemNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *workNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionLabel;
+
 @end

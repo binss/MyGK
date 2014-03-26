@@ -79,15 +79,6 @@
 }
 
 
-
-- (IBAction)uploadPIC:(id)sender
-{
-//    NSURL *url = [NSURL URLWithString:@"http://127.0.0.1:8000/pic/UserUploadPic/kankore-bath-shimakaze.png/"];
-//    [self.picccccc setImageWithURL:url placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
-    
-    
-}
-
 - (IBAction)UploadPictureButtonPressed:(UIButton *)sender
 {
     if([[BINUserModel sharedUserData] loginState])

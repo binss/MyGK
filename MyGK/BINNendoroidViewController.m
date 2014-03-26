@@ -43,8 +43,28 @@ static NSString *cellIdentifier = @"nendoroidCell";
     UINib *nib = [UINib nibWithNibName:@"BINNendoroid" bundle:nil];
     [collectionView registerNib:nib forCellWithReuseIdentifier:cellIdentifier];
 //    [self.collectionView registerClass:[BINNendoroidCell class] forCellWithReuseIdentifier:@"CellIdentifier"];
+    
+    [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(loadNendoroidDetail:) name:@"loadNendoroidDetail" object:nil];
+
 
 }
+
+- (void)loadNendoroidDetail:(NSNotification *) notification
+{
+    // 刷新表格
+    NSString *type = [notification object];
+    if([type isEqualToString:@"success"])
+    {
+        [self performSegueWithIdentifier:@"nendoroidDetail" sender:self];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"检索不到改编号" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil,nil];
+        
+        [alert show];
+    }
+}
+
 
 
 
@@ -120,5 +140,33 @@ static NSString *cellIdentifier = @"nendoroidCell";
     //    self.navigationItem.backBarButtonItem= [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:nil];
 }
 
+
+- (IBAction)searchButtonPressed:(UIBarButtonItem *)sender
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请输入您想查看的粘土编号:" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认",nil];
+    [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
+
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    UITextField *textField = [alertView textFieldAtIndex:0];
+    if(textField.text.length < 3 || textField.text.length > 4)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"输入编号不合法，请检查～" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil,nil];
+        
+        [alert show];
+    }
+    else
+    {
+        [[BINNendoroidModel sharedNendoroid] checkItemNum:textField.text];
+    }
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 @end

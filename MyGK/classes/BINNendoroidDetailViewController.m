@@ -36,41 +36,27 @@
     // Do any additional setup after loading the view.
     currentImageX = 0;
     
-    imageScrollView= [[UIScrollView alloc] initWithFrame:CGRectMake(0, 65, 320, 260)];
+    imageScrollView= [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 260)];
     imageScrollView.pagingEnabled = YES;
     imageScrollView.showsHorizontalScrollIndicator = NO;
     imageScrollView.showsVerticalScrollIndicator = NO;
     imageScrollView.delegate = self;
     
-    pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(0, 60, 320, 30)];
+    pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
     [pageControl addTarget:self action:@selector(pageControlClicked:) forControlEvents:UIControlEventValueChanged];
     pageControl.currentPage = 0;
     currentPage = 0;
     pageControlScrolling = NO;
     
     [self loadImage];
-    
-//    NSString *imagePath_1 = [[NSBundle mainBundle] pathForResource:@"Nendoroid.bundle/403/403-1" ofType:@"png"];
-//    NSString *imagePath_2 = [[NSBundle mainBundle] pathForResource:@"Nendoroid.bundle/403/403-2" ofType:@"png"];
-//    NSString *imagePath_3 = [[NSBundle mainBundle] pathForResource:@"Nendoroid.bundle/403/403-3" ofType:@"png"];
-//    
-//    UIImageView *imageview1=[[UIImageView alloc]initWithFrame:CGRectMake(0, -20, 320, 320)];
-//    [imageview1 setContentMode:UIViewContentModeScaleAspectFill];
-//    [imageview1 setImage:[[UIImage alloc] initWithContentsOfFile:imagePath_1]];
-//    UIImageView *imageview2=[[UIImageView alloc]initWithFrame:CGRectMake(320, -20, 320, 320)];
-//    [imageview2 setContentMode:UIViewContentModeScaleAspectFill];
-//    [imageview2 setImage:[[UIImage alloc] initWithContentsOfFile:imagePath_2]];
-//    UIImageView *imageview3=[[UIImageView alloc]initWithFrame:CGRectMake(640, -20, 320, 320)];
-//    [imageview3 setContentMode:UIViewContentModeScaleAspectFill];
-//    [imageview3 setImage:[[UIImage alloc] initWithContentsOfFile:imagePath_3]];
-//    imageview1.clipsToBounds = YES;
-//    imageview2.clipsToBounds = YES;
-//    imageview3.clipsToBounds = YES;
-//
-//    [imageScrollView addSubview:imageview1];
-//    [imageScrollView addSubview:imageview2];
-//    [imageScrollView addSubview:imageview3];
-    
+  
+    self.itemNumLabel.text = [[BINNendoroidModel sharedNendoroid] selected_itemNum];
+    self.nameLabel.text = [[BINNendoroidModel sharedNendoroid] selected_productName];
+    self.workNameLabel.text = [[BINNendoroidModel sharedNendoroid] selected_workName];
+    self.priceLabel.text = [[BINNendoroidModel sharedNendoroid] selected_price];
+    self.timeLabel.text = [[BINNendoroidModel sharedNendoroid] selected_time];
+    self.descriptionLabel.text = [[BINNendoroidModel sharedNendoroid] selected_description];
+
 
     
     [self.view addSubview:imageScrollView];
@@ -127,7 +113,7 @@
 - (void)loadImage
 {
     int totalImageNum = [[BINNendoroidModel sharedNendoroid] imageNum];
-    NSString * num = [[BINNendoroidModel sharedNendoroid] selectedNendoroid];
+    NSString * num = [[BINNendoroidModel sharedNendoroid] selected_itemNum];
 //    int totalImageNum = 4;
 //    NSString * num = @"403";
     [imageScrollView setContentSize:CGSizeMake(totalImageNum * 320, 260)];

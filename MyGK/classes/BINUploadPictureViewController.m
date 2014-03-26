@@ -47,7 +47,8 @@
     self.upLoadButton.enabled = NO;
     if ([self.chosenMediaType isEqual:(NSString *)kUTTypeImage])
     {
-        self.imageView.image = showImage;
+        [self.imageView setBackgroundImage:showImage forState:UIControlStateNormal];
+//        self.imageView.image = showImage;
         self.upLoadButton.enabled = YES;
     }
     else if([chosenMediaType isEqual:(NSString *)kUTTypeMovie])
@@ -66,6 +67,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        //加载来自相机的文件
+        [self pickMediaFromSource:UIImagePickerControllerSourceTypeCamera];
+    }else if (buttonIndex == 1)
+    {
+        //加载来自媒体库的文件
+        [self pickMediaFromSource:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
 }
 
 - (void)uploadDone:(NSNotification *) notification
@@ -100,26 +114,12 @@
 }
 
 
-- (IBAction)shootPicture:(UIButton *)sender
-{
-    //加载来自相机的文件
-    [self pickMediaFromSource:UIImagePickerControllerSourceTypeCamera];
-
-}
-
-- (IBAction)selectExistingPicture:(UIButton *)sender
-{
-    //加载来自媒体库的文件
-    [self pickMediaFromSource:UIImagePickerControllerSourceTypePhotoLibrary];
-
-}
-
 - (IBAction)resetButtonPressed:(UIButton *)sender
 {
     self.nameField.text = @"";
     self.priceField.text = @"";
     self.descriptionField.text = @"";
-    self.imageView.image = [UIImage imageNamed:@"profile-image-placeholder"];
+//    self.imageView.image = [UIImage imageNamed:@"profile-image-placeholder"];
 }
 
 - (IBAction)uploadButtonPressed:(UIButton *)sender
@@ -259,5 +259,18 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [UIView commitAnimations];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
+- (IBAction)imageViewPressed:(UIButton *)sender
+{
+    UIActionSheet *choiceSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                             delegate:self
+                                                    cancelButtonTitle:@"取消"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"拍照", @"从相册中选取", nil];
+    [choiceSheet showInView:self.view];
+}
 @end
